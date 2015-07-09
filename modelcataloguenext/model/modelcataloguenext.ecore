@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mcn" nsURI="http://models.cs.ox.ac.uk/ns/mcn" nsPrefix="mcn">
+  <eClassifiers xsi:type="ecore:EClass" name="AdminsteredItem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" eType="#//Annotation"
+        eOpposite="#//Annotation/item"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdByUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" eType="#//Term"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataClass" eSuperTypes="#//AdminsteredItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//DataClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//DataClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datamodel" lowerBound="1"
+        eType="#//DataModel" eOpposite="#//DataModel/dataclasses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelements" upperBound="-1"
+        eType="#//DataElement" eOpposite="#//DataElement/dataclass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataModel" eSuperTypes="#//AdminsteredItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="finalised" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataclasses" upperBound="-1"
+        eType="#//DataClass" eOpposite="#//DataClass/datamodel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="finalisedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataElement" eSuperTypes="#//AdminsteredItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataclass" lowerBound="1"
+        eType="#//DataClass" eOpposite="#//DataClass/dataelements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valuedomain" upperBound="-1"
+        eType="#//ValueDomain" eOpposite="#//ValueDomain/dataelement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="#//AdminsteredItem"
+        eOpposite="#//AdminsteredItem/annotation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueDomain" eSuperTypes="#//AdminsteredItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataelement" lowerBound="1"
+        eType="#//DataElement" eOpposite="#//DataElement/valuedomain"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//AdminsteredItem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceType" eSuperTypes="#//DataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedTo" lowerBound="1"
+        eType="#//DataClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//DataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enums" upperBound="-1"
+        eType="#//EnumValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//AdminsteredItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//AdminsteredItem"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="takenFrom" eType="#//Terminology"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminology" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumValue" eSuperTypes="#//AdminsteredItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
