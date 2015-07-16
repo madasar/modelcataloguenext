@@ -7,7 +7,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: mcn.tests
+Export-Package: mcn.tests,
+ modelcatalogue.tests
 Require-Bundle: org.eclipse.core.runtime,
  modelcataloguenext;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

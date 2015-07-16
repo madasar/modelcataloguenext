@@ -1,6 +1,6 @@
 /**
  */
-package mcn.tests;
+package modelcatalogue.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -9,11 +9,11 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>mcn</b></em>' package.
+ * A test suite for the '<em><b>modelcatalogue</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextTests extends TestSuite {
+public class McnTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class ModelcataloguenextTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new ModelcataloguenextTests("mcn Tests");
+		TestSuite suite = new McnTests("modelcatalogue Tests");
 		return suite;
 	}
 
@@ -39,8 +39,8 @@ public class ModelcataloguenextTests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextTests(String name) {
+	public McnTests(String name) {
 		super(name);
 	}
 
-} //ModelcataloguenextTests
+} //McnTests

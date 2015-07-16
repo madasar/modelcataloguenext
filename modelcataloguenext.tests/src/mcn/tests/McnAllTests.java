@@ -9,11 +9,11 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>Modelcataloguenext</b></em>' model.
+ * A test suite for the '<em><b>Mcn</b></em>' model.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextAllTests extends TestSuite {
+public class McnAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class ModelcataloguenextAllTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new ModelcataloguenextAllTests("Modelcataloguenext Tests");
+		TestSuite suite = new McnAllTests("Mcn Tests");
 		return suite;
 	}
 
@@ -39,8 +39,8 @@ public class ModelcataloguenextAllTests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextAllTests(String name) {
+	public McnAllTests(String name) {
 		super(name);
 	}
 
-} //ModelcataloguenextAllTests
+} //McnAllTests

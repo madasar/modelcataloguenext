@@ -1,13 +1,13 @@
 /**
  */
-package mcn.tests;
+package modelcatalogue.tests;
 
 import java.io.File;
 import java.io.IOException;
 
-import mcn.DataClass;
-import mcn.ModelcataloguenextFactory;
-import mcn.ModelcataloguenextPackage;
+import modelcatalogue.DataModel;
+import modelcatalogue.McnFactory;
+import modelcatalogue.McnPackage;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>mcn</b></em>' package.
+ * A sample utility for the '<em><b>modelcatalogue</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextExample {
+public class McnExample {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
@@ -51,16 +51,16 @@ public class ModelcataloguenextExample {
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(ModelcataloguenextPackage.eNS_URI, 
-			 ModelcataloguenextPackage.eINSTANCE);
+			(McnPackage.eNS_URI, 
+			 McnPackage.eINSTANCE);
         
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.modelcataloguenext"));
-				DataClass root = ModelcataloguenextFactory.eINSTANCE.createDataClass();
+				Resource resource = resourceSet.createResource(URI.createURI("http:///My.mcn"));
+				DataModel root = McnFactory.eINSTANCE.createDataModel();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}
@@ -118,4 +118,4 @@ public class ModelcataloguenextExample {
 		}
 	}
 
-} //ModelcataloguenextExample
+} //McnExample
