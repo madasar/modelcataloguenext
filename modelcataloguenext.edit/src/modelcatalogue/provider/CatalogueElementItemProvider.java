@@ -1,15 +1,22 @@
 /**
  */
-package mcn.provider;
+package modelcatalogue.provider;
 
 
 import java.util.Collection;
 import java.util.List;
-import mcn.AdminsteredItem;
-import mcn.McnPackage;
+
+import modelcatalogue.CatalogueElement;
+import modelcatalogue.McnFactory;
+import modelcatalogue.McnPackage;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mcn.AdminsteredItem} object.
+ * This is the item provider adapter for a {@link modelcatalogue.CatalogueElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AdminsteredItemItemProvider 
+public class CatalogueElementItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -41,7 +48,7 @@ public class AdminsteredItemItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdminsteredItemItemProvider(AdapterFactory adapterFactory) {
+	public CatalogueElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,36 +63,12 @@ public class AdminsteredItemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnnotationPropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
 			addGUIDPropertyDescriptor(object);
 			addDateCreatedPropertyDescriptor(object);
 			addCreatedByUserPropertyDescriptor(object);
-			addLinkedToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Annotation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnnotationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_annotation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_annotation_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__ANNOTATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -99,9 +82,9 @@ public class AdminsteredItemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_label_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_label_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__LABEL,
+				 getString("_UI_CatalogueElement_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CatalogueElement_label_feature", "_UI_CatalogueElement_type"),
+				 McnPackage.Literals.CATALOGUE_ELEMENT__LABEL,
 				 true,
 				 false,
 				 false,
@@ -121,9 +104,9 @@ public class AdminsteredItemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_GUID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_GUID_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__GUID,
+				 getString("_UI_CatalogueElement_GUID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CatalogueElement_GUID_feature", "_UI_CatalogueElement_type"),
+				 McnPackage.Literals.CATALOGUE_ELEMENT__GUID,
 				 true,
 				 false,
 				 false,
@@ -143,9 +126,9 @@ public class AdminsteredItemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_dateCreated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_dateCreated_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__DATE_CREATED,
+				 getString("_UI_CatalogueElement_dateCreated_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CatalogueElement_dateCreated_feature", "_UI_CatalogueElement_type"),
+				 McnPackage.Literals.CATALOGUE_ELEMENT__DATE_CREATED,
 				 true,
 				 false,
 				 false,
@@ -165,37 +148,46 @@ public class AdminsteredItemItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_createdByUser_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_createdByUser_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__CREATED_BY_USER,
+				 getString("_UI_CatalogueElement_createdByUser_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CatalogueElement_createdByUser_feature", "_UI_CatalogueElement_type"),
+				 McnPackage.Literals.CATALOGUE_ELEMENT__CREATED_BY_USER,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Linked To feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLinkedToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AdminsteredItem_linkedTo_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AdminsteredItem_linkedTo_feature", "_UI_AdminsteredItem_type"),
-				 McnPackage.Literals.ADMINSTERED_ITEM__LINKED_TO,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(McnPackage.Literals.CATALOGUE_ELEMENT__CONTRAINTS);
+			childrenFeatures.add(McnPackage.Literals.CATALOGUE_ELEMENT__TAGS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -206,10 +198,10 @@ public class AdminsteredItemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AdminsteredItem)object).getLabel();
+		String label = ((CatalogueElement)object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AdminsteredItem_type") :
-			getString("_UI_AdminsteredItem_type") + " " + label;
+			getString("_UI_CatalogueElement_type") :
+			getString("_UI_CatalogueElement_type") + " " + label;
 	}
 	
 
@@ -224,12 +216,16 @@ public class AdminsteredItemItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AdminsteredItem.class)) {
-			case McnPackage.ADMINSTERED_ITEM__LABEL:
-			case McnPackage.ADMINSTERED_ITEM__GUID:
-			case McnPackage.ADMINSTERED_ITEM__DATE_CREATED:
-			case McnPackage.ADMINSTERED_ITEM__CREATED_BY_USER:
+		switch (notification.getFeatureID(CatalogueElement.class)) {
+			case McnPackage.CATALOGUE_ELEMENT__LABEL:
+			case McnPackage.CATALOGUE_ELEMENT__GUID:
+			case McnPackage.CATALOGUE_ELEMENT__DATE_CREATED:
+			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
+			case McnPackage.CATALOGUE_ELEMENT__TAGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -245,6 +241,16 @@ public class AdminsteredItemItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(McnPackage.Literals.CATALOGUE_ELEMENT__CONTRAINTS,
+				 McnFactory.eINSTANCE.createDataConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(McnPackage.Literals.CATALOGUE_ELEMENT__TAGS,
+				 McnFactory.eINSTANCE.createTag()));
 	}
 
 	/**

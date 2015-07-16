@@ -1,24 +1,31 @@
 /**
  */
-package mcn.provider;
+package modelcatalogue.provider;
 
 
 import java.util.Collection;
 import java.util.List;
-import mcn.DataClass;
-import mcn.McnPackage;
+
+import modelcatalogue.DataClass;
+import modelcatalogue.McnFactory;
+import modelcatalogue.McnPackage;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mcn.DataClass} object.
+ * This is the item provider adapter for a {@link modelcatalogue.DataClass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataClassItemProvider extends AdminsteredItemItemProvider {
+public class DataClassItemProvider extends CatalogueElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -40,27 +47,26 @@ public class DataClassItemProvider extends AdminsteredItemItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addExtendsPropertyDescriptor(object);
+			addXtendsPropertyDescriptor(object);
 			addContainsPropertyDescriptor(object);
-			addElementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Extends feature.
+	 * This adds a property descriptor for the Xtends feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExtendsPropertyDescriptor(Object object) {
+	protected void addXtendsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataClass_extends_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataClass_extends_feature", "_UI_DataClass_type"),
-				 McnPackage.Literals.DATA_CLASS__EXTENDS,
+				 getString("_UI_DataClass_xtends_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataClass_xtends_feature", "_UI_DataClass_type"),
+				 McnPackage.Literals.DATA_CLASS__XTENDS,
 				 true,
 				 false,
 				 true,
@@ -92,25 +98,33 @@ public class DataClassItemProvider extends AdminsteredItemItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Elements feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addElementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataClass_elements_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataClass_elements_feature", "_UI_DataClass_type"),
-				 McnPackage.Literals.DATA_CLASS__ELEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(McnPackage.Literals.DATA_CLASS__DEFINES);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -149,6 +163,12 @@ public class DataClassItemProvider extends AdminsteredItemItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DataClass.class)) {
+			case McnPackage.DATA_CLASS__DEFINES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -162,6 +182,11 @@ public class DataClassItemProvider extends AdminsteredItemItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(McnPackage.Literals.DATA_CLASS__DEFINES,
+				 McnFactory.eINSTANCE.createDataItem()));
 	}
 
 }

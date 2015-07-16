@@ -1,31 +1,34 @@
 /**
  */
-package mcn.provider;
+package modelcatalogue.provider;
 
 
 import java.util.Collection;
 import java.util.List;
-import mcn.DataElement;
-import mcn.McnPackage;
+
+import modelcatalogue.EnumValue;
+import modelcatalogue.McnPackage;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link mcn.DataElement} object.
+ * This is the item provider adapter for a {@link modelcatalogue.EnumValue} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataElementItemProvider extends AdminsteredItemItemProvider {
+public class EnumValueItemProvider extends CatalogueElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataElementItemProvider(AdapterFactory adapterFactory) {
+	public EnumValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -40,25 +43,25 @@ public class DataElementItemProvider extends AdminsteredItemItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValueDomainPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value Domain feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValueDomainPropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataElement_valueDomain_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataElement_valueDomain_feature", "_UI_DataElement_type"),
-				 McnPackage.Literals.DATA_ELEMENT__VALUE_DOMAIN,
+				 getString("_UI_EnumValue_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EnumValue_type_feature", "_UI_EnumValue_type"),
+				 McnPackage.Literals.ENUM_VALUE__TYPE,
 				 true,
 				 false,
 				 true,
@@ -68,14 +71,14 @@ public class DataElementItemProvider extends AdminsteredItemItemProvider {
 	}
 
 	/**
-	 * This returns DataElement.gif.
+	 * This returns EnumValue.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EnumValue"));
 	}
 
 	/**
@@ -86,10 +89,10 @@ public class DataElementItemProvider extends AdminsteredItemItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DataElement)object).getLabel();
+		String label = ((EnumValue)object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DataElement_type") :
-			getString("_UI_DataElement_type") + " " + label;
+			getString("_UI_EnumValue_type") :
+			getString("_UI_EnumValue_type") + " " + label;
 	}
 	
 

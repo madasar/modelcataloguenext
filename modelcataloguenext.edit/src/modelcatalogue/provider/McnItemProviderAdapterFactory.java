@@ -1,11 +1,11 @@
 /**
  */
-package mcn.provider;
+package modelcatalogue.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import mcn.util.ModelcataloguenextAdapterFactory;
+import modelcatalogue.util.McnAdapterFactory;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextItemProviderAdapterFactory extends ModelcataloguenextAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class McnItemProviderAdapterFactory extends McnAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextItemProviderAdapterFactory() {
+	public McnItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -72,30 +72,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.DataClass} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataClassItemProvider dataClassItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mcn.DataClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataClassAdapter() {
-		if (dataClassItemProvider == null) {
-			dataClassItemProvider = new DataClassItemProvider(this);
-		}
-
-		return dataClassItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mcn.DataModel} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.DataModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,7 +80,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	protected DataModelItemProvider dataModelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.DataModel}.
+	 * This creates an adapter for a {@link modelcatalogue.DataModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,76 +95,76 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.DataElement} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.DataClass} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataElementItemProvider dataElementItemProvider;
+	protected DataClassItemProvider dataClassItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.DataElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataElementAdapter() {
-		if (dataElementItemProvider == null) {
-			dataElementItemProvider = new DataElementItemProvider(this);
-		}
-
-		return dataElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mcn.Annotation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AnnotationItemProvider annotationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mcn.Annotation}.
+	 * This creates an adapter for a {@link modelcatalogue.DataClass}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAnnotationAdapter() {
-		if (annotationItemProvider == null) {
-			annotationItemProvider = new AnnotationItemProvider(this);
+	public Adapter createDataClassAdapter() {
+		if (dataClassItemProvider == null) {
+			dataClassItemProvider = new DataClassItemProvider(this);
 		}
 
-		return annotationItemProvider;
+		return dataClassItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.ValueDomain} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.DataItem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ValueDomainItemProvider valueDomainItemProvider;
+	protected DataItemItemProvider dataItemItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.ValueDomain}.
+	 * This creates an adapter for a {@link modelcatalogue.DataItem}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createValueDomainAdapter() {
-		if (valueDomainItemProvider == null) {
-			valueDomainItemProvider = new ValueDomainItemProvider(this);
+	public Adapter createDataItemAdapter() {
+		if (dataItemItemProvider == null) {
+			dataItemItemProvider = new DataItemItemProvider(this);
 		}
 
-		return valueDomainItemProvider;
+		return dataItemItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.ReferenceType} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.DataConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataConstraintItemProvider dataConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link modelcatalogue.DataConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataConstraintAdapter() {
+		if (dataConstraintItemProvider == null) {
+			dataConstraintItemProvider = new DataConstraintItemProvider(this);
+		}
+
+		return dataConstraintItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.ReferenceType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +172,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	protected ReferenceTypeItemProvider referenceTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.ReferenceType}.
+	 * This creates an adapter for a {@link modelcatalogue.ReferenceType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +187,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.PrimitiveType} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.PrimitiveType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +195,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	protected PrimitiveTypeItemProvider primitiveTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.PrimitiveType}.
+	 * This creates an adapter for a {@link modelcatalogue.PrimitiveType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -233,76 +210,53 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.Enumeration} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.Relationship} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EnumerationItemProvider enumerationItemProvider;
+	protected RelationshipItemProvider relationshipItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.Enumeration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnumerationAdapter() {
-		if (enumerationItemProvider == null) {
-			enumerationItemProvider = new EnumerationItemProvider(this);
-		}
-
-		return enumerationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mcn.SemanticLink} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SemanticLinkItemProvider semanticLinkItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mcn.SemanticLink}.
+	 * This creates an adapter for a {@link modelcatalogue.Relationship}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSemanticLinkAdapter() {
-		if (semanticLinkItemProvider == null) {
-			semanticLinkItemProvider = new SemanticLinkItemProvider(this);
+	public Adapter createRelationshipAdapter() {
+		if (relationshipItemProvider == null) {
+			relationshipItemProvider = new RelationshipItemProvider(this);
 		}
 
-		return semanticLinkItemProvider;
+		return relationshipItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.Term} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.Tag} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TermItemProvider termItemProvider;
+	protected TagItemProvider tagItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.Term}.
+	 * This creates an adapter for a {@link modelcatalogue.Tag}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTermAdapter() {
-		if (termItemProvider == null) {
-			termItemProvider = new TermItemProvider(this);
+	public Adapter createTagAdapter() {
+		if (tagItemProvider == null) {
+			tagItemProvider = new TagItemProvider(this);
 		}
 
-		return termItemProvider;
+		return tagItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mcn.EnumValue} instances.
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.EnumValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -310,7 +264,7 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	protected EnumValueItemProvider enumValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mcn.EnumValue}.
+	 * This creates an adapter for a {@link modelcatalogue.EnumValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -322,6 +276,29 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 		}
 
 		return enumValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link modelcatalogue.Enumeration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationItemProvider enumerationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link modelcatalogue.Enumeration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationAdapter() {
+		if (enumerationItemProvider == null) {
+			enumerationItemProvider = new EnumerationItemProvider(this);
+		}
+
+		return enumerationItemProvider;
 	}
 
 	/**
@@ -423,17 +400,16 @@ public class ModelcataloguenextItemProviderAdapterFactory extends Modelcatalogue
 	 * @generated
 	 */
 	public void dispose() {
-		if (dataClassItemProvider != null) dataClassItemProvider.dispose();
 		if (dataModelItemProvider != null) dataModelItemProvider.dispose();
-		if (dataElementItemProvider != null) dataElementItemProvider.dispose();
-		if (annotationItemProvider != null) annotationItemProvider.dispose();
-		if (valueDomainItemProvider != null) valueDomainItemProvider.dispose();
+		if (dataClassItemProvider != null) dataClassItemProvider.dispose();
+		if (dataItemItemProvider != null) dataItemItemProvider.dispose();
+		if (dataConstraintItemProvider != null) dataConstraintItemProvider.dispose();
 		if (referenceTypeItemProvider != null) referenceTypeItemProvider.dispose();
 		if (primitiveTypeItemProvider != null) primitiveTypeItemProvider.dispose();
-		if (enumerationItemProvider != null) enumerationItemProvider.dispose();
-		if (semanticLinkItemProvider != null) semanticLinkItemProvider.dispose();
-		if (termItemProvider != null) termItemProvider.dispose();
+		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
+		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (enumValueItemProvider != null) enumValueItemProvider.dispose();
+		if (enumerationItemProvider != null) enumerationItemProvider.dispose();
 	}
 
 }

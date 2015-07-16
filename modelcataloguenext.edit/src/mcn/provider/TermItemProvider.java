@@ -136,7 +136,7 @@ public class TermItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ModelcataloguenextEditPlugin.INSTANCE;
+		return McnEditPlugin.INSTANCE;
 	}
 
 }

@@ -103,7 +103,7 @@ public class TerminologyItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ModelcataloguenextEditPlugin.INSTANCE;
+		return McnEditPlugin.INSTANCE;
 	}
 
 }

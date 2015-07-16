@@ -192,7 +192,7 @@ public class SemanticLinkItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ModelcataloguenextEditPlugin.INSTANCE;
+		return McnEditPlugin.INSTANCE;
 	}
 
 }

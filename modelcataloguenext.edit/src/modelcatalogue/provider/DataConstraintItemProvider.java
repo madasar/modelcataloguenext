@@ -1,15 +1,19 @@
 /**
  */
-package mcn.provider;
+package modelcatalogue.provider;
 
 
 import java.util.Collection;
 import java.util.List;
-import mcn.Annotation;
-import mcn.McnPackage;
+
+import modelcatalogue.DataConstraint;
+import modelcatalogue.McnPackage;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mcn.Annotation} object.
+ * This is the item provider adapter for a {@link modelcatalogue.DataConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnnotationItemProvider 
+public class DataConstraintItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -41,7 +45,7 @@ public class AnnotationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnnotationItemProvider(AdapterFactory adapterFactory) {
+	public DataConstraintItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,49 +60,26 @@ public class AnnotationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addItemPropertyDescriptor(object);
-			addKeyPropertyDescriptor(object);
+			addLanguagePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Item feature.
+	 * This adds a property descriptor for the Language feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addItemPropertyDescriptor(Object object) {
+	protected void addLanguagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_item_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_item_feature", "_UI_Annotation_type"),
-				 McnPackage.Literals.ANNOTATION__ITEM,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Annotation_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_key_feature", "_UI_Annotation_type"),
-				 McnPackage.Literals.ANNOTATION__KEY,
+				 getString("_UI_DataConstraint_language_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataConstraint_language_feature", "_UI_DataConstraint_type"),
+				 McnPackage.Literals.DATA_CONSTRAINT__LANGUAGE,
 				 true,
 				 false,
 				 false,
@@ -118,9 +99,9 @@ public class AnnotationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Annotation_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Annotation_value_feature", "_UI_Annotation_type"),
-				 McnPackage.Literals.ANNOTATION__VALUE,
+				 getString("_UI_DataConstraint_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataConstraint_value_feature", "_UI_DataConstraint_type"),
+				 McnPackage.Literals.DATA_CONSTRAINT__VALUE,
 				 true,
 				 false,
 				 false,
@@ -130,14 +111,14 @@ public class AnnotationItemProvider
 	}
 
 	/**
-	 * This returns Annotation.gif.
+	 * This returns DataConstraint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Annotation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataConstraint"));
 	}
 
 	/**
@@ -148,10 +129,10 @@ public class AnnotationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Annotation)object).getKey();
+		String label = ((DataConstraint)object).getLanguage();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Annotation_type") :
-			getString("_UI_Annotation_type") + " " + label;
+			getString("_UI_DataConstraint_type") :
+			getString("_UI_DataConstraint_type") + " " + label;
 	}
 	
 
@@ -166,9 +147,9 @@ public class AnnotationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Annotation.class)) {
-			case McnPackage.ANNOTATION__KEY:
-			case McnPackage.ANNOTATION__VALUE:
+		switch (notification.getFeatureID(DataConstraint.class)) {
+			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
+			case McnPackage.DATA_CONSTRAINT__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
