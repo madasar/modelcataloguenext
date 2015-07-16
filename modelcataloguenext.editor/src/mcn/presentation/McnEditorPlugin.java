@@ -9,19 +9,19 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the Modelcataloguenext editor plugin.
+ * This is the central singleton for the Mcn editor plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class ModelcataloguenextEditorPlugin extends EMFPlugin {
+public final class McnEditorPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final ModelcataloguenextEditorPlugin INSTANCE = new ModelcataloguenextEditorPlugin();
+	public static final McnEditorPlugin INSTANCE = new McnEditorPlugin();
 	
 	/**
 	 * Keep track of the singleton.
@@ -37,7 +37,7 @@ public final class ModelcataloguenextEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextEditorPlugin() {
+	public McnEditorPlugin() {
 		super
 			(new ResourceLocator [] {
 			});

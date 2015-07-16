@@ -1,6 +1,6 @@
 /**
  */
-package mcn.presentation;
+package modelcatalogue.presentation;
 
 
 import java.io.IOException;
@@ -154,18 +154,18 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import mcn.provider.ModelcataloguenextItemProviderAdapterFactory;
+import modelcatalogue.provider.McnItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
 /**
- * This is an example of a Modelcataloguenext model editor.
+ * This is an example of a Mcn model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextEditor
+public class McnEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -327,18 +327,18 @@ public class ModelcataloguenextEditor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(ModelcataloguenextEditor.this);
+						getActionBarContributor().setActiveEditor(McnEditor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(ModelcataloguenextEditor.this);
+						getActionBarContributor().setActiveEditor(McnEditor.this);
 						handleActivate();
 					}
 				}
-				else if (p == ModelcataloguenextEditor.this) {
+				else if (p == McnEditor.this) {
 					handleActivate();
 				}
 			}
@@ -511,7 +511,7 @@ public class ModelcataloguenextEditor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(ModelcataloguenextEditor.this, false);
+										 getSite().getPage().closeEditor(McnEditor.this, false);
 									 }
 								 }
 							 });
@@ -522,7 +522,7 @@ public class ModelcataloguenextEditor
 							(new Runnable() {
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == ModelcataloguenextEditor.this) {
+									 if (getSite().getPage().getActiveEditor() == McnEditor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -530,7 +530,7 @@ public class ModelcataloguenextEditor
 					}
 				}
 				catch (CoreException exception) {
-					ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+					McnEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -554,7 +554,7 @@ public class ModelcataloguenextEditor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(ModelcataloguenextEditor.this, false);
+				getSite().getPage().closeEditor(McnEditor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -646,7 +646,7 @@ public class ModelcataloguenextEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+					McnEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -657,7 +657,7 @@ public class ModelcataloguenextEditor
 						markerHelper.createMarkers(diagnostic);
 					}
 					catch (CoreException exception) {
-						ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+						McnEditorPlugin.INSTANCE.log(exception);
 					}
 				}
 			}
@@ -684,7 +684,7 @@ public class ModelcataloguenextEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextEditor() {
+	public McnEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -701,7 +701,7 @@ public class ModelcataloguenextEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ModelcataloguenextItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new McnItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -1021,7 +1021,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1055,7 +1055,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1084,7 +1084,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1109,7 +1109,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1136,7 +1136,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1179,7 +1179,7 @@ public class ModelcataloguenextEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelcataloguenextEditor.this) {
+					new ViewerPane(getSite().getPage(), McnEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1399,8 +1399,8 @@ public class ModelcataloguenextEditor
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					ModelcataloguenextEditor.this.setSelectionToViewer(selection);
-					ModelcataloguenextEditor.this.setFocus();
+					McnEditor.this.setSelectionToViewer(selection);
+					McnEditor.this.setFocus();
 				}
 
 				@Override
@@ -1522,7 +1522,7 @@ public class ModelcataloguenextEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+			McnEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1726,7 +1726,7 @@ public class ModelcataloguenextEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return ModelcataloguenextEditorPlugin.INSTANCE.getString(key);
+		return McnEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1736,7 +1736,7 @@ public class ModelcataloguenextEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return ModelcataloguenextEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return McnEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

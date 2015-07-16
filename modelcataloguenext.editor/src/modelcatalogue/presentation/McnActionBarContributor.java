@@ -1,6 +1,6 @@
 /**
  */
-package mcn.presentation;
+package modelcatalogue.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,12 +40,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the Modelcataloguenext model editor.
+ * This is the action bar contributor for the Mcn model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextActionBarContributor
+public class McnActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -71,14 +71,14 @@ public class ModelcataloguenextActionBarContributor
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction =
-		new Action(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
+		new Action(McnEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
 			@Override
 			public void run() {
 				try {
 					getPage().showView("org.eclipse.ui.views.PropertySheet");
 				}
 				catch (PartInitException exception) {
-					ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+					McnEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -91,7 +91,7 @@ public class ModelcataloguenextActionBarContributor
 	 * @generated
 	 */
 	protected IAction refreshViewerAction =
-		new Action(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
+		new Action(McnEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
 			@Override
 			public boolean isEnabled() {
 				return activeEditorPart instanceof IViewerProvider;
@@ -148,7 +148,7 @@ public class ModelcataloguenextActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextActionBarContributor() {
+	public McnActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -163,8 +163,8 @@ public class ModelcataloguenextActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
-		toolBarManager.add(new Separator("modelcataloguenext-settings"));
-		toolBarManager.add(new Separator("modelcataloguenext-additions"));
+		toolBarManager.add(new Separator("mcn-settings"));
+		toolBarManager.add(new Separator("mcn-additions"));
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class ModelcataloguenextActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextEditor_menu"), "mcnMenuID");
+		IMenuManager submenuManager = new MenuManager(McnEditorPlugin.INSTANCE.getString("_UI_McnEditor_menu"), "modelcatalogueMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));
@@ -187,12 +187,12 @@ public class ModelcataloguenextActionBarContributor
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		createChildMenuManager = new MenuManager(McnEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		submenuManager.insertBefore("additions", createChildMenuManager);
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		createSiblingMenuManager = new MenuManager(McnEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
 
 		// Force an update because Eclipse hides empty menus now.
@@ -383,11 +383,11 @@ public class ModelcataloguenextActionBarContributor
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+		submenuManager = new MenuManager(McnEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
+		submenuManager = new MenuManager(McnEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 	}

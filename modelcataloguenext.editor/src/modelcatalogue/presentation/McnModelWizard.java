@@ -1,6 +1,6 @@
 /**
  */
-package mcn.presentation;
+package modelcatalogue.presentation;
 
 
 import java.util.ArrayList;
@@ -69,9 +69,9 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import mcn.ModelcataloguenextFactory;
-import mcn.ModelcataloguenextPackage;
-import mcn.provider.ModelcataloguenextEditPlugin;
+import modelcatalogue.McnFactory;
+import modelcatalogue.McnPackage;
+import modelcatalogue.provider.McnEditPlugin;
 
 
 import org.eclipse.core.runtime.Path;
@@ -91,7 +91,7 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelcataloguenextModelWizard extends Wizard implements INewWizard {
+public class McnModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -99,7 +99,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(McnEditorPlugin.INSTANCE.getString("_UI_McnEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -108,7 +108,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		McnEditorPlugin.INSTANCE.getString("_UI_McnEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -116,7 +116,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelcataloguenextPackage modelcataloguenextPackage = ModelcataloguenextPackage.eINSTANCE;
+	protected McnPackage mcnPackage = McnPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -124,7 +124,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelcataloguenextFactory modelcataloguenextFactory = modelcataloguenextPackage.getModelcataloguenextFactory();
+	protected McnFactory mcnFactory = mcnPackage.getMcnFactory();
 
 	/**
 	 * This is the file creation page.
@@ -132,7 +132,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelcataloguenextModelWizardNewFileCreationPage newFileCreationPage;
+	protected McnModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -140,7 +140,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelcataloguenextModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected McnModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -175,8 +175,8 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ModelcataloguenextEditorPlugin.INSTANCE.getImage("full/wizban/NewModelcataloguenext")));
+		setWindowTitle(McnEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(McnEditorPlugin.INSTANCE.getImage("full/wizban/NewMcn")));
 	}
 
 	/**
@@ -188,7 +188,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : modelcataloguenextPackage.getEClassifiers()) {
+			for (EClassifier eClassifier : mcnPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
@@ -208,8 +208,8 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)modelcataloguenextPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = modelcataloguenextFactory.create(eClass);
+		EClass eClass = (EClass)mcnPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = mcnFactory.create(eClass);
 		return rootObject;
 	}
 
@@ -259,7 +259,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+							McnEditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -292,14 +292,14 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), McnEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			ModelcataloguenextEditorPlugin.INSTANCE.log(exception);
+			McnEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -310,14 +310,14 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelcataloguenextModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class McnModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelcataloguenextModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public McnModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -333,7 +333,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(ModelcataloguenextEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(McnEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -357,7 +357,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelcataloguenextModelWizardInitialObjectCreationPage extends WizardPage {
+	public class McnModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -385,7 +385,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelcataloguenextModelWizardInitialObjectCreationPage(String pageId) {
+		public McnModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -395,7 +395,8 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -410,7 +411,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(McnEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -436,7 +437,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(McnEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -535,10 +536,10 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return ModelcataloguenextEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return McnEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				ModelcataloguenextEditorPlugin.INSTANCE.log(mre);
+				McnEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -551,7 +552,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(McnEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -569,10 +570,10 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new ModelcataloguenextModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextModelWizard_label"));
-		newFileCreationPage.setDescription(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextModelWizard_description"));
-		newFileCreationPage.setFileName(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new McnModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(McnEditorPlugin.INSTANCE.getString("_UI_McnModelWizard_label"));
+		newFileCreationPage.setDescription(McnEditorPlugin.INSTANCE.getString("_UI_McnModelWizard_description"));
+		newFileCreationPage.setFileName(McnEditorPlugin.INSTANCE.getString("_UI_McnEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -598,7 +599,7 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = McnEditorPlugin.INSTANCE.getString("_UI_McnEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -608,9 +609,9 @@ public class ModelcataloguenextModelWizard extends Wizard implements INewWizard 
 				}
 			}
 		}
-		initialObjectCreationPage = new ModelcataloguenextModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_ModelcataloguenextModelWizard_label"));
-		initialObjectCreationPage.setDescription(ModelcataloguenextEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage = new McnModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(McnEditorPlugin.INSTANCE.getString("_UI_McnModelWizard_label"));
+		initialObjectCreationPage.setDescription(McnEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 
