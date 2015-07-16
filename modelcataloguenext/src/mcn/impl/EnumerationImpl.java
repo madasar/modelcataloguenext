@@ -3,11 +3,15 @@
 package mcn.impl;
 
 import java.util.Collection;
+
 import mcn.EnumValue;
 import mcn.Enumeration;
 import mcn.McnPackage;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**

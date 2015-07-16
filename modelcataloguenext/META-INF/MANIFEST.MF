@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: mcn,
  mcn.impl,
- mcn.util
+ mcn.util,
+ modelcatalogue,
+ modelcatalogue.impl,
+ modelcatalogue.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

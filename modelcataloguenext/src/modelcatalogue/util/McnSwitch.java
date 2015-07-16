@@ -1,8 +1,8 @@
 /**
  */
-package mcn.util;
+package modelcatalogue.util;
 
-import mcn.*;
+import modelcatalogue.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see mcn.ModelcataloguenextPackage
+ * @see modelcatalogue.McnPackage
  * @generated
  */
-public class ModelcataloguenextSwitch<T> extends Switch<T> {
+public class McnSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ModelcataloguenextPackage modelPackage;
+	protected static McnPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextSwitch() {
+	public McnSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ModelcataloguenextPackage.eINSTANCE;
+			modelPackage = McnPackage.eINSTANCE;
 		}
 	}
 
@@ -66,99 +66,86 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ModelcataloguenextPackage.ADMINSTERED_ITEM: {
-				AdminsteredItem adminsteredItem = (AdminsteredItem)theEObject;
-				T result = caseAdminsteredItem(adminsteredItem);
+			case McnPackage.CATALOGUE_ELEMENT: {
+				CatalogueElement catalogueElement = (CatalogueElement)theEObject;
+				T result = caseCatalogueElement(catalogueElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.DATA_CLASS: {
-				DataClass dataClass = (DataClass)theEObject;
-				T result = caseDataClass(dataClass);
-				if (result == null) result = caseAdminsteredItem(dataClass);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelcataloguenextPackage.DATA_MODEL: {
+			case McnPackage.DATA_MODEL: {
 				DataModel dataModel = (DataModel)theEObject;
 				T result = caseDataModel(dataModel);
-				if (result == null) result = caseAdminsteredItem(dataModel);
+				if (result == null) result = caseCatalogueElement(dataModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.DATA_ELEMENT: {
-				DataElement dataElement = (DataElement)theEObject;
-				T result = caseDataElement(dataElement);
-				if (result == null) result = caseAdminsteredItem(dataElement);
+			case McnPackage.DATA_CLASS: {
+				DataClass dataClass = (DataClass)theEObject;
+				T result = caseDataClass(dataClass);
+				if (result == null) result = caseCatalogueElement(dataClass);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.ANNOTATION: {
-				Annotation annotation = (Annotation)theEObject;
-				T result = caseAnnotation(annotation);
+			case McnPackage.DATA_ITEM: {
+				DataItem dataItem = (DataItem)theEObject;
+				T result = caseDataItem(dataItem);
+				if (result == null) result = caseCatalogueElement(dataItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.VALUE_DOMAIN: {
-				ValueDomain valueDomain = (ValueDomain)theEObject;
-				T result = caseValueDomain(valueDomain);
-				if (result == null) result = caseAdminsteredItem(valueDomain);
+			case McnPackage.DATA_CONSTRAINT: {
+				DataConstraint dataConstraint = (DataConstraint)theEObject;
+				T result = caseDataConstraint(dataConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.DATA_TYPE: {
+			case McnPackage.DATA_TYPE: {
 				DataType dataType = (DataType)theEObject;
 				T result = caseDataType(dataType);
-				if (result == null) result = caseAdminsteredItem(dataType);
+				if (result == null) result = caseCatalogueElement(dataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.REFERENCE_TYPE: {
+			case McnPackage.REFERENCE_TYPE: {
 				ReferenceType referenceType = (ReferenceType)theEObject;
 				T result = caseReferenceType(referenceType);
 				if (result == null) result = caseDataType(referenceType);
-				if (result == null) result = caseAdminsteredItem(referenceType);
+				if (result == null) result = caseCatalogueElement(referenceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.PRIMITIVE_TYPE: {
+			case McnPackage.PRIMITIVE_TYPE: {
 				PrimitiveType primitiveType = (PrimitiveType)theEObject;
 				T result = casePrimitiveType(primitiveType);
 				if (result == null) result = caseDataType(primitiveType);
-				if (result == null) result = caseAdminsteredItem(primitiveType);
+				if (result == null) result = caseCatalogueElement(primitiveType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelcataloguenextPackage.ENUMERATION: {
+			case McnPackage.RELATIONSHIP: {
+				Relationship relationship = (Relationship)theEObject;
+				T result = caseRelationship(relationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case McnPackage.TAG: {
+				Tag tag = (Tag)theEObject;
+				T result = caseTag(tag);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case McnPackage.ENUM_VALUE: {
+				EnumValue enumValue = (EnumValue)theEObject;
+				T result = caseEnumValue(enumValue);
+				if (result == null) result = caseCatalogueElement(enumValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case McnPackage.ENUMERATION: {
 				Enumeration enumeration = (Enumeration)theEObject;
 				T result = caseEnumeration(enumeration);
 				if (result == null) result = caseDataType(enumeration);
-				if (result == null) result = caseAdminsteredItem(enumeration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelcataloguenextPackage.SEMANTIC_LINK: {
-				SemanticLink semanticLink = (SemanticLink)theEObject;
-				T result = caseSemanticLink(semanticLink);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelcataloguenextPackage.TERM: {
-				Term term = (Term)theEObject;
-				T result = caseTerm(term);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelcataloguenextPackage.TERMINOLOGY: {
-				Terminology terminology = (Terminology)theEObject;
-				T result = caseTerminology(terminology);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelcataloguenextPackage.ENUM_VALUE: {
-				EnumValue enumValue = (EnumValue)theEObject;
-				T result = caseEnumValue(enumValue);
-				if (result == null) result = caseAdminsteredItem(enumValue);
+				if (result == null) result = caseCatalogueElement(enumeration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,32 +154,17 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Adminstered Item</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Catalogue Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Adminstered Item</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Catalogue Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAdminsteredItem(AdminsteredItem object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Class</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataClass(DataClass object) {
+	public T caseCatalogueElement(CatalogueElement object) {
 		return null;
 	}
 
@@ -212,47 +184,47 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Class</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataElement(DataElement object) {
+	public T caseDataClass(DataClass object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Item</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Item</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAnnotation(Annotation object) {
+	public T caseDataItem(DataItem object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Value Domain</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Value Domain</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseValueDomain(ValueDomain object) {
+	public T caseDataConstraint(DataConstraint object) {
 		return null;
 	}
 
@@ -302,62 +274,32 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEnumeration(Enumeration object) {
+	public T caseRelationship(Relationship object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Semantic Link</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Tag</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Semantic Link</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Tag</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSemanticLink(SemanticLink object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Term</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTerm(Term object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Terminology</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Terminology</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTerminology(Terminology object) {
+	public T caseTag(Tag object) {
 		return null;
 	}
 
@@ -377,6 +319,21 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumeration(Enumeration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -392,4 +349,4 @@ public class ModelcataloguenextSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ModelcataloguenextSwitch
+} //McnSwitch

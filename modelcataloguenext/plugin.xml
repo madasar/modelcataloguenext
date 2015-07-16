@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated modelcataloguenext -->
+      <!-- @generated mcn -->
       <package
-            uri="http://models.cs.ox.ac.uk/ns/mcn"
-            class="mcn.McnPackage"
-            genModel="model/modelcataloguenext.genmodel"/>
+            uri="http://models.cs.ox.ac.uk/ns/modelcatalogue"
+            class="modelcatalogue.McnPackage"
+            genModel="model/mcn.genmodel"/>
    </extension>
 
 </plugin>

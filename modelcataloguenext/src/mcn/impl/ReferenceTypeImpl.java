@@ -5,9 +5,12 @@ package mcn.impl;
 import mcn.DataClass;
 import mcn.McnPackage;
 import mcn.ReferenceType;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

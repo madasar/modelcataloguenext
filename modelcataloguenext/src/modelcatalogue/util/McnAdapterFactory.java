@@ -1,8 +1,8 @@
 /**
  */
-package mcn.util;
+package modelcatalogue.util;
 
-import mcn.*;
+import modelcatalogue.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,17 +16,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see mcn.ModelcataloguenextPackage
+ * @see modelcatalogue.McnPackage
  * @generated
  */
-public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
+public class McnAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ModelcataloguenextPackage modelPackage;
+	protected static McnPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelcataloguenextAdapterFactory() {
+	public McnAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ModelcataloguenextPackage.eINSTANCE;
+			modelPackage = McnPackage.eINSTANCE;
 		}
 	}
 
@@ -65,31 +65,27 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelcataloguenextSwitch<Adapter> modelSwitch =
-		new ModelcataloguenextSwitch<Adapter>() {
+	protected McnSwitch<Adapter> modelSwitch =
+		new McnSwitch<Adapter>() {
 			@Override
-			public Adapter caseAdminsteredItem(AdminsteredItem object) {
-				return createAdminsteredItemAdapter();
-			}
-			@Override
-			public Adapter caseDataClass(DataClass object) {
-				return createDataClassAdapter();
+			public Adapter caseCatalogueElement(CatalogueElement object) {
+				return createCatalogueElementAdapter();
 			}
 			@Override
 			public Adapter caseDataModel(DataModel object) {
 				return createDataModelAdapter();
 			}
 			@Override
-			public Adapter caseDataElement(DataElement object) {
-				return createDataElementAdapter();
+			public Adapter caseDataClass(DataClass object) {
+				return createDataClassAdapter();
 			}
 			@Override
-			public Adapter caseAnnotation(Annotation object) {
-				return createAnnotationAdapter();
+			public Adapter caseDataItem(DataItem object) {
+				return createDataItemAdapter();
 			}
 			@Override
-			public Adapter caseValueDomain(ValueDomain object) {
-				return createValueDomainAdapter();
+			public Adapter caseDataConstraint(DataConstraint object) {
+				return createDataConstraintAdapter();
 			}
 			@Override
 			public Adapter caseDataType(DataType object) {
@@ -104,24 +100,20 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 				return createPrimitiveTypeAdapter();
 			}
 			@Override
-			public Adapter caseEnumeration(Enumeration object) {
-				return createEnumerationAdapter();
+			public Adapter caseRelationship(Relationship object) {
+				return createRelationshipAdapter();
 			}
 			@Override
-			public Adapter caseSemanticLink(SemanticLink object) {
-				return createSemanticLinkAdapter();
-			}
-			@Override
-			public Adapter caseTerm(Term object) {
-				return createTermAdapter();
-			}
-			@Override
-			public Adapter caseTerminology(Terminology object) {
-				return createTerminologyAdapter();
+			public Adapter caseTag(Tag object) {
+				return createTagAdapter();
 			}
 			@Override
 			public Adapter caseEnumValue(EnumValue object) {
 				return createEnumValueAdapter();
+			}
+			@Override
+			public Adapter caseEnumeration(Enumeration object) {
+				return createEnumerationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -144,41 +136,27 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.AdminsteredItem <em>Adminstered Item</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.CatalogueElement <em>Catalogue Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.AdminsteredItem
+	 * @see modelcatalogue.CatalogueElement
 	 * @generated
 	 */
-	public Adapter createAdminsteredItemAdapter() {
+	public Adapter createCatalogueElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.DataClass <em>Data Class</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.DataModel <em>Data Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.DataClass
-	 * @generated
-	 */
-	public Adapter createDataClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mcn.DataModel <em>Data Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mcn.DataModel
+	 * @see modelcatalogue.DataModel
 	 * @generated
 	 */
 	public Adapter createDataModelAdapter() {
@@ -186,55 +164,55 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.DataElement <em>Data Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.DataClass <em>Data Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.DataElement
+	 * @see modelcatalogue.DataClass
 	 * @generated
 	 */
-	public Adapter createDataElementAdapter() {
+	public Adapter createDataClassAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.Annotation <em>Annotation</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.DataItem <em>Data Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.Annotation
+	 * @see modelcatalogue.DataItem
 	 * @generated
 	 */
-	public Adapter createAnnotationAdapter() {
+	public Adapter createDataItemAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.ValueDomain <em>Value Domain</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.DataConstraint <em>Data Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.ValueDomain
+	 * @see modelcatalogue.DataConstraint
 	 * @generated
 	 */
-	public Adapter createValueDomainAdapter() {
+	public Adapter createDataConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.DataType
+	 * @see modelcatalogue.DataType
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
@@ -242,13 +220,13 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.ReferenceType <em>Reference Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.ReferenceType <em>Reference Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.ReferenceType
+	 * @see modelcatalogue.ReferenceType
 	 * @generated
 	 */
 	public Adapter createReferenceTypeAdapter() {
@@ -256,13 +234,13 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.PrimitiveType <em>Primitive Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.PrimitiveType <em>Primitive Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.PrimitiveType
+	 * @see modelcatalogue.PrimitiveType
 	 * @generated
 	 */
 	public Adapter createPrimitiveTypeAdapter() {
@@ -270,72 +248,58 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.Enumeration <em>Enumeration</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.Relationship <em>Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.Enumeration
+	 * @see modelcatalogue.Relationship
 	 * @generated
 	 */
-	public Adapter createEnumerationAdapter() {
+	public Adapter createRelationshipAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.SemanticLink <em>Semantic Link</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.Tag <em>Tag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.SemanticLink
+	 * @see modelcatalogue.Tag
 	 * @generated
 	 */
-	public Adapter createSemanticLinkAdapter() {
+	public Adapter createTagAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mcn.Term <em>Term</em>}'.
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.EnumValue <em>Enum Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mcn.Term
-	 * @generated
-	 */
-	public Adapter createTermAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mcn.Terminology <em>Terminology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mcn.Terminology
-	 * @generated
-	 */
-	public Adapter createTerminologyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mcn.EnumValue <em>Enum Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mcn.EnumValue
+	 * @see modelcatalogue.EnumValue
 	 * @generated
 	 */
 	public Adapter createEnumValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link modelcatalogue.Enumeration <em>Enumeration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see modelcatalogue.Enumeration
+	 * @generated
+	 */
+	public Adapter createEnumerationAdapter() {
 		return null;
 	}
 
@@ -351,4 +315,4 @@ public class ModelcataloguenextAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ModelcataloguenextAdapterFactory
+} //McnAdapterFactory

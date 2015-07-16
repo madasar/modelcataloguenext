@@ -18,12 +18,12 @@ import mcn.SemanticLink;
 import mcn.Term;
 import mcn.Terminology;
 import mcn.ValueDomain;
-
+import mcn.util.McnValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -183,6 +183,15 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		// Initialize created meta-data
 		theMcnPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theMcnPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return McnValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theMcnPackage.freeze();
 
@@ -287,17 +296,8 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataClass_Datamodel() {
+	public EReference getDataClass_Elements() {
 		return (EReference)dataClassEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataClass_Dataelements() {
-		return (EReference)dataClassEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -323,17 +323,8 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataModel_Dataclasses() {
-		return (EReference)dataModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDataModel_ReleaseLabel() {
-		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -342,7 +333,16 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * @generated
 	 */
 	public EAttribute getDataModel_FinalisedDate() {
-		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)dataModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataModel_Dataclasses() {
+		return (EReference)dataModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -359,17 +359,8 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataElement_Dataclass() {
+	public EReference getDataElement_ValueDomain() {
 		return (EReference)dataElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataElement_Valuedomain() {
-		return (EReference)dataElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -422,17 +413,8 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getValueDomain_Dataelement() {
-		return (EReference)valueDomainEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getValueDomain_Type() {
-		return (EReference)valueDomainEClass.getEStructuralFeatures().get(1);
+		return (EReference)valueDomainEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -618,18 +600,16 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		dataClassEClass = createEClass(DATA_CLASS);
 		createEReference(dataClassEClass, DATA_CLASS__EXTENDS);
 		createEReference(dataClassEClass, DATA_CLASS__CONTAINS);
-		createEReference(dataClassEClass, DATA_CLASS__DATAMODEL);
-		createEReference(dataClassEClass, DATA_CLASS__DATAELEMENTS);
+		createEReference(dataClassEClass, DATA_CLASS__ELEMENTS);
 
 		dataModelEClass = createEClass(DATA_MODEL);
 		createEAttribute(dataModelEClass, DATA_MODEL__FINALISED);
-		createEReference(dataModelEClass, DATA_MODEL__DATACLASSES);
 		createEAttribute(dataModelEClass, DATA_MODEL__RELEASE_LABEL);
 		createEAttribute(dataModelEClass, DATA_MODEL__FINALISED_DATE);
+		createEReference(dataModelEClass, DATA_MODEL__DATACLASSES);
 
 		dataElementEClass = createEClass(DATA_ELEMENT);
-		createEReference(dataElementEClass, DATA_ELEMENT__DATACLASS);
-		createEReference(dataElementEClass, DATA_ELEMENT__VALUEDOMAIN);
+		createEReference(dataElementEClass, DATA_ELEMENT__VALUE_DOMAIN);
 
 		annotationEClass = createEClass(ANNOTATION);
 		createEReference(annotationEClass, ANNOTATION__ITEM);
@@ -637,7 +617,6 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		createEAttribute(annotationEClass, ANNOTATION__VALUE);
 
 		valueDomainEClass = createEClass(VALUE_DOMAIN);
-		createEReference(valueDomainEClass, VALUE_DOMAIN__DATAELEMENT);
 		createEReference(valueDomainEClass, VALUE_DOMAIN__TYPE);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
@@ -715,18 +694,16 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		initEClass(dataClassEClass, DataClass.class, "DataClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataClass_Extends(), this.getDataClass(), null, "extends", null, 0, 1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataClass_Contains(), this.getDataClass(), null, "contains", null, 0, -1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataClass_Datamodel(), this.getDataModel(), this.getDataModel_Dataclasses(), "datamodel", null, 1, 1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataClass_Dataelements(), this.getDataElement(), this.getDataElement_Dataclass(), "dataelements", null, 0, -1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataClass_Elements(), this.getDataElement(), null, "elements", null, 0, -1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataModel_Finalised(), ecorePackage.getEBoolean(), "finalised", "false", 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataModel_Dataclasses(), this.getDataClass(), this.getDataClass_Datamodel(), "dataclasses", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_ReleaseLabel(), ecorePackage.getEString(), "releaseLabel", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_FinalisedDate(), ecorePackage.getEDate(), "finalisedDate", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataModel_Dataclasses(), this.getDataClass(), null, "dataclasses", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataElementEClass, DataElement.class, "DataElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataElement_Dataclass(), this.getDataClass(), this.getDataClass_Dataelements(), "dataclass", null, 1, 1, DataElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataElement_Valuedomain(), this.getValueDomain(), this.getValueDomain_Dataelement(), "valuedomain", null, 0, -1, DataElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataElement_ValueDomain(), this.getValueDomain(), null, "valueDomain", null, 0, -1, DataElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAnnotation_Item(), this.getAdminsteredItem(), this.getAdminsteredItem_Annotation(), "item", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -734,7 +711,6 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		initEAttribute(getAnnotation_Value(), ecorePackage.getEString(), "value", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueDomainEClass, ValueDomain.class, "ValueDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getValueDomain_Dataelement(), this.getDataElement(), this.getDataElement_Valuedomain(), "dataelement", null, 1, 1, ValueDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getValueDomain_Type(), this.getDataType(), null, "type", null, 1, 1, ValueDomain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -763,6 +739,70 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (dataClassEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NonSelf_clones"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (dataClassEClass, 
+		   source, 
+		   new String[] {
+			 "NonSelf_clones", "Tuple {\n\tmessage : String = \'The \\\'DataClass\\\' \"\' + self.toString() + \'\" cannot clone itself\',\n\tstatus : Boolean = \n\t\t\tself.contains <> self\n}.status"
+		   });
 	}
 
 } //McnPackageImpl

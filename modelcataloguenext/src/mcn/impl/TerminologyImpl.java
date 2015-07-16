@@ -4,7 +4,9 @@ package mcn.impl;
 
 import mcn.McnPackage;
 import mcn.Terminology;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**

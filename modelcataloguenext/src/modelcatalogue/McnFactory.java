@@ -1,6 +1,6 @@
 /**
  */
-package mcn;
+package modelcatalogue;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,26 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see mcn.ModelcataloguenextPackage
+ * @see modelcatalogue.McnPackage
  * @generated
  */
-public interface ModelcataloguenextFactory extends EFactory {
+public interface McnFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ModelcataloguenextFactory eINSTANCE = mcn.impl.ModelcataloguenextFactoryImpl.init();
-
-	/**
-	 * Returns a new object of class '<em>Data Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Class</em>'.
-	 * @generated
-	 */
-	DataClass createDataClass();
+	McnFactory eINSTANCE = modelcatalogue.impl.McnFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Data Model</em>'.
@@ -40,31 +31,31 @@ public interface ModelcataloguenextFactory extends EFactory {
 	DataModel createDataModel();
 
 	/**
-	 * Returns a new object of class '<em>Data Element</em>'.
+	 * Returns a new object of class '<em>Data Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Element</em>'.
+	 * @return a new object of class '<em>Data Class</em>'.
 	 * @generated
 	 */
-	DataElement createDataElement();
+	DataClass createDataClass();
 
 	/**
-	 * Returns a new object of class '<em>Annotation</em>'.
+	 * Returns a new object of class '<em>Data Item</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Annotation</em>'.
+	 * @return a new object of class '<em>Data Item</em>'.
 	 * @generated
 	 */
-	Annotation createAnnotation();
+	DataItem createDataItem();
 
 	/**
-	 * Returns a new object of class '<em>Value Domain</em>'.
+	 * Returns a new object of class '<em>Data Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Value Domain</em>'.
+	 * @return a new object of class '<em>Data Constraint</em>'.
 	 * @generated
 	 */
-	ValueDomain createValueDomain();
+	DataConstraint createDataConstraint();
 
 	/**
 	 * Returns a new object of class '<em>Reference Type</em>'.
@@ -85,31 +76,22 @@ public interface ModelcataloguenextFactory extends EFactory {
 	PrimitiveType createPrimitiveType();
 
 	/**
-	 * Returns a new object of class '<em>Enumeration</em>'.
+	 * Returns a new object of class '<em>Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration</em>'.
+	 * @return a new object of class '<em>Relationship</em>'.
 	 * @generated
 	 */
-	Enumeration createEnumeration();
+	Relationship createRelationship();
 
 	/**
-	 * Returns a new object of class '<em>Semantic Link</em>'.
+	 * Returns a new object of class '<em>Tag</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Semantic Link</em>'.
+	 * @return a new object of class '<em>Tag</em>'.
 	 * @generated
 	 */
-	SemanticLink createSemanticLink();
-
-	/**
-	 * Returns a new object of class '<em>Term</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Term</em>'.
-	 * @generated
-	 */
-	Term createTerm();
+	Tag createTag();
 
 	/**
 	 * Returns a new object of class '<em>Enum Value</em>'.
@@ -121,12 +103,21 @@ public interface ModelcataloguenextFactory extends EFactory {
 	EnumValue createEnumValue();
 
 	/**
+	 * Returns a new object of class '<em>Enumeration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration</em>'.
+	 * @generated
+	 */
+	Enumeration createEnumeration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	ModelcataloguenextPackage getModelcataloguenextPackage();
+	McnPackage getMcnPackage();
 
-} //ModelcataloguenextFactory
+} //McnFactory

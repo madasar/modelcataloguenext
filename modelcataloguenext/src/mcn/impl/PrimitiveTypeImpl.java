@@ -4,6 +4,7 @@ package mcn.impl;
 
 import mcn.McnPackage;
 import mcn.PrimitiveType;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

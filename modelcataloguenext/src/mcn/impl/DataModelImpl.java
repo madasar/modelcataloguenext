@@ -4,17 +4,20 @@ package mcn.impl;
 
 import java.util.Collection;
 import java.util.Date;
+
 import mcn.DataClass;
 import mcn.DataModel;
 import mcn.McnPackage;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,9 +27,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mcn.impl.DataModelImpl#isFinalised <em>Finalised</em>}</li>
- *   <li>{@link mcn.impl.DataModelImpl#getDataclasses <em>Dataclasses</em>}</li>
  *   <li>{@link mcn.impl.DataModelImpl#getReleaseLabel <em>Release Label</em>}</li>
  *   <li>{@link mcn.impl.DataModelImpl#getFinalisedDate <em>Finalised Date</em>}</li>
+ *   <li>{@link mcn.impl.DataModelImpl#getDataclasses <em>Dataclasses</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,16 +55,6 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 	 * @ordered
 	 */
 	protected boolean finalised = FINALISED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDataclasses() <em>Dataclasses</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDataclasses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataClass> dataclasses;
 
 	/**
 	 * The default value of the '{@link #getReleaseLabel() <em>Release Label</em>}' attribute.
@@ -104,6 +97,16 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 	protected Date finalisedDate = FINALISED_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDataclasses() <em>Dataclasses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataclasses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DataClass> dataclasses;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,18 +144,6 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 		finalised = newFinalised;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.DATA_MODEL__FINALISED, oldFinalised, finalised));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DataClass> getDataclasses() {
-		if (dataclasses == null) {
-			dataclasses = new EObjectWithInverseResolvingEList<DataClass>(DataClass.class, this, McnPackage.DATA_MODEL__DATACLASSES, McnPackage.DATA_CLASS__DATAMODEL);
-		}
-		return dataclasses;
 	}
 
 	/**
@@ -202,28 +193,11 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataclasses()).basicAdd(otherEnd, msgs);
+	public EList<DataClass> getDataclasses() {
+		if (dataclasses == null) {
+			dataclasses = new EObjectResolvingEList<DataClass>(DataClass.class, this, McnPackage.DATA_MODEL__DATACLASSES);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				return ((InternalEList<?>)getDataclasses()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return dataclasses;
 	}
 
 	/**
@@ -236,12 +210,12 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 		switch (featureID) {
 			case McnPackage.DATA_MODEL__FINALISED:
 				return isFinalised();
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				return getDataclasses();
 			case McnPackage.DATA_MODEL__RELEASE_LABEL:
 				return getReleaseLabel();
 			case McnPackage.DATA_MODEL__FINALISED_DATE:
 				return getFinalisedDate();
+			case McnPackage.DATA_MODEL__DATACLASSES:
+				return getDataclasses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,15 +232,15 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 			case McnPackage.DATA_MODEL__FINALISED:
 				setFinalised((Boolean)newValue);
 				return;
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				getDataclasses().clear();
-				getDataclasses().addAll((Collection<? extends DataClass>)newValue);
-				return;
 			case McnPackage.DATA_MODEL__RELEASE_LABEL:
 				setReleaseLabel((String)newValue);
 				return;
 			case McnPackage.DATA_MODEL__FINALISED_DATE:
 				setFinalisedDate((Date)newValue);
+				return;
+			case McnPackage.DATA_MODEL__DATACLASSES:
+				getDataclasses().clear();
+				getDataclasses().addAll((Collection<? extends DataClass>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,14 +257,14 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 			case McnPackage.DATA_MODEL__FINALISED:
 				setFinalised(FINALISED_EDEFAULT);
 				return;
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				getDataclasses().clear();
-				return;
 			case McnPackage.DATA_MODEL__RELEASE_LABEL:
 				setReleaseLabel(RELEASE_LABEL_EDEFAULT);
 				return;
 			case McnPackage.DATA_MODEL__FINALISED_DATE:
 				setFinalisedDate(FINALISED_DATE_EDEFAULT);
+				return;
+			case McnPackage.DATA_MODEL__DATACLASSES:
+				getDataclasses().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -306,12 +280,12 @@ public class DataModelImpl extends AdminsteredItemImpl implements DataModel {
 		switch (featureID) {
 			case McnPackage.DATA_MODEL__FINALISED:
 				return finalised != FINALISED_EDEFAULT;
-			case McnPackage.DATA_MODEL__DATACLASSES:
-				return dataclasses != null && !dataclasses.isEmpty();
 			case McnPackage.DATA_MODEL__RELEASE_LABEL:
 				return RELEASE_LABEL_EDEFAULT == null ? releaseLabel != null : !RELEASE_LABEL_EDEFAULT.equals(releaseLabel);
 			case McnPackage.DATA_MODEL__FINALISED_DATE:
 				return FINALISED_DATE_EDEFAULT == null ? finalisedDate != null : !FINALISED_DATE_EDEFAULT.equals(finalisedDate);
+			case McnPackage.DATA_MODEL__DATACLASSES:
+				return dataclasses != null && !dataclasses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

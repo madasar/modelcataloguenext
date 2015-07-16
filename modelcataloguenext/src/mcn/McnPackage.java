@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see mcn.McnFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface McnPackage extends EPackage {
@@ -221,22 +223,13 @@ public interface McnPackage extends EPackage {
 	int DATA_CLASS__CONTAINS = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Datamodel</b></em>' reference.
+	 * The feature id for the '<em><b>Elements</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CLASS__DATAMODEL = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Dataelements</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_CLASS__DATAELEMENTS = ADMINSTERED_ITEM_FEATURE_COUNT + 3;
+	int DATA_CLASS__ELEMENTS = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Data Class</em>' class.
@@ -245,7 +238,7 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CLASS_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 4;
+	int DATA_CLASS_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Class</em>' class.
@@ -330,22 +323,13 @@ public interface McnPackage extends EPackage {
 	int DATA_MODEL__FINALISED = ADMINSTERED_ITEM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Dataclasses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_MODEL__DATACLASSES = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Release Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL__RELEASE_LABEL = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
+	int DATA_MODEL__RELEASE_LABEL = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Finalised Date</b></em>' attribute.
@@ -354,7 +338,16 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL__FINALISED_DATE = ADMINSTERED_ITEM_FEATURE_COUNT + 3;
+	int DATA_MODEL__FINALISED_DATE = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Dataclasses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MODEL__DATACLASSES = ADMINSTERED_ITEM_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Model</em>' class.
@@ -439,22 +432,13 @@ public interface McnPackage extends EPackage {
 	int DATA_ELEMENT__LINKED_TO = ADMINSTERED_ITEM__LINKED_TO;
 
 	/**
-	 * The feature id for the '<em><b>Dataclass</b></em>' reference.
+	 * The feature id for the '<em><b>Value Domain</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT__DATACLASS = ADMINSTERED_ITEM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Valuedomain</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_ELEMENT__VALUEDOMAIN = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
+	int DATA_ELEMENT__VALUE_DOMAIN = ADMINSTERED_ITEM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Data Element</em>' class.
@@ -463,7 +447,7 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ELEMENT_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
+	int DATA_ELEMENT_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Data Element</em>' class.
@@ -594,22 +578,13 @@ public interface McnPackage extends EPackage {
 	int VALUE_DOMAIN__LINKED_TO = ADMINSTERED_ITEM__LINKED_TO;
 
 	/**
-	 * The feature id for the '<em><b>Dataelement</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_DOMAIN__DATAELEMENT = ADMINSTERED_ITEM_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_DOMAIN__TYPE = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
+	int VALUE_DOMAIN__TYPE = ADMINSTERED_ITEM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Value Domain</em>' class.
@@ -618,7 +593,7 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_DOMAIN_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 2;
+	int VALUE_DOMAIN_FEATURE_COUNT = ADMINSTERED_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Value Domain</em>' class.
@@ -1195,7 +1170,6 @@ public interface McnPackage extends EPackage {
 	 */
 	int ENUM_VALUE_OPERATION_COUNT = ADMINSTERED_ITEM_OPERATION_COUNT + 0;
 
-
 	/**
 	 * Returns the meta object for class '{@link mcn.AdminsteredItem <em>Adminstered Item</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1305,26 +1279,15 @@ public interface McnPackage extends EPackage {
 	EReference getDataClass_Contains();
 
 	/**
-	 * Returns the meta object for the reference '{@link mcn.DataClass#getDatamodel <em>Datamodel</em>}'.
+	 * Returns the meta object for the reference list '{@link mcn.DataClass#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Datamodel</em>'.
-	 * @see mcn.DataClass#getDatamodel()
+	 * @return the meta object for the reference list '<em>Elements</em>'.
+	 * @see mcn.DataClass#getElements()
 	 * @see #getDataClass()
 	 * @generated
 	 */
-	EReference getDataClass_Datamodel();
-
-	/**
-	 * Returns the meta object for the reference list '{@link mcn.DataClass#getDataelements <em>Dataelements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Dataelements</em>'.
-	 * @see mcn.DataClass#getDataelements()
-	 * @see #getDataClass()
-	 * @generated
-	 */
-	EReference getDataClass_Dataelements();
+	EReference getDataClass_Elements();
 
 	/**
 	 * Returns the meta object for class '{@link mcn.DataModel <em>Data Model</em>}'.
@@ -1346,17 +1309,6 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataModel_Finalised();
-
-	/**
-	 * Returns the meta object for the reference list '{@link mcn.DataModel#getDataclasses <em>Dataclasses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Dataclasses</em>'.
-	 * @see mcn.DataModel#getDataclasses()
-	 * @see #getDataModel()
-	 * @generated
-	 */
-	EReference getDataModel_Dataclasses();
 
 	/**
 	 * Returns the meta object for the attribute '{@link mcn.DataModel#getReleaseLabel <em>Release Label</em>}'.
@@ -1381,6 +1333,17 @@ public interface McnPackage extends EPackage {
 	EAttribute getDataModel_FinalisedDate();
 
 	/**
+	 * Returns the meta object for the reference list '{@link mcn.DataModel#getDataclasses <em>Dataclasses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dataclasses</em>'.
+	 * @see mcn.DataModel#getDataclasses()
+	 * @see #getDataModel()
+	 * @generated
+	 */
+	EReference getDataModel_Dataclasses();
+
+	/**
 	 * Returns the meta object for class '{@link mcn.DataElement <em>Data Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1391,26 +1354,15 @@ public interface McnPackage extends EPackage {
 	EClass getDataElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link mcn.DataElement#getDataclass <em>Dataclass</em>}'.
+	 * Returns the meta object for the reference list '{@link mcn.DataElement#getValueDomain <em>Value Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Dataclass</em>'.
-	 * @see mcn.DataElement#getDataclass()
+	 * @return the meta object for the reference list '<em>Value Domain</em>'.
+	 * @see mcn.DataElement#getValueDomain()
 	 * @see #getDataElement()
 	 * @generated
 	 */
-	EReference getDataElement_Dataclass();
-
-	/**
-	 * Returns the meta object for the reference list '{@link mcn.DataElement#getValuedomain <em>Valuedomain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Valuedomain</em>'.
-	 * @see mcn.DataElement#getValuedomain()
-	 * @see #getDataElement()
-	 * @generated
-	 */
-	EReference getDataElement_Valuedomain();
+	EReference getDataElement_ValueDomain();
 
 	/**
 	 * Returns the meta object for class '{@link mcn.Annotation <em>Annotation</em>}'.
@@ -1464,17 +1416,6 @@ public interface McnPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getValueDomain();
-
-	/**
-	 * Returns the meta object for the reference '{@link mcn.ValueDomain#getDataelement <em>Dataelement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Dataelement</em>'.
-	 * @see mcn.ValueDomain#getDataelement()
-	 * @see #getValueDomain()
-	 * @generated
-	 */
-	EReference getValueDomain_Dataelement();
 
 	/**
 	 * Returns the meta object for the reference '{@link mcn.ValueDomain#getType <em>Type</em>}'.
@@ -1763,20 +1704,12 @@ public interface McnPackage extends EPackage {
 		EReference DATA_CLASS__CONTAINS = eINSTANCE.getDataClass_Contains();
 
 		/**
-		 * The meta object literal for the '<em><b>Datamodel</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Elements</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_CLASS__DATAMODEL = eINSTANCE.getDataClass_Datamodel();
-
-		/**
-		 * The meta object literal for the '<em><b>Dataelements</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_CLASS__DATAELEMENTS = eINSTANCE.getDataClass_Dataelements();
+		EReference DATA_CLASS__ELEMENTS = eINSTANCE.getDataClass_Elements();
 
 		/**
 		 * The meta object literal for the '{@link mcn.impl.DataModelImpl <em>Data Model</em>}' class.
@@ -1797,14 +1730,6 @@ public interface McnPackage extends EPackage {
 		EAttribute DATA_MODEL__FINALISED = eINSTANCE.getDataModel_Finalised();
 
 		/**
-		 * The meta object literal for the '<em><b>Dataclasses</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_MODEL__DATACLASSES = eINSTANCE.getDataModel_Dataclasses();
-
-		/**
 		 * The meta object literal for the '<em><b>Release Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1821,6 +1746,14 @@ public interface McnPackage extends EPackage {
 		EAttribute DATA_MODEL__FINALISED_DATE = eINSTANCE.getDataModel_FinalisedDate();
 
 		/**
+		 * The meta object literal for the '<em><b>Dataclasses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_MODEL__DATACLASSES = eINSTANCE.getDataModel_Dataclasses();
+
+		/**
 		 * The meta object literal for the '{@link mcn.impl.DataElementImpl <em>Data Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1831,20 +1764,12 @@ public interface McnPackage extends EPackage {
 		EClass DATA_ELEMENT = eINSTANCE.getDataElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Dataclass</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value Domain</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_ELEMENT__DATACLASS = eINSTANCE.getDataElement_Dataclass();
-
-		/**
-		 * The meta object literal for the '<em><b>Valuedomain</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_ELEMENT__VALUEDOMAIN = eINSTANCE.getDataElement_Valuedomain();
+		EReference DATA_ELEMENT__VALUE_DOMAIN = eINSTANCE.getDataElement_ValueDomain();
 
 		/**
 		 * The meta object literal for the '{@link mcn.impl.AnnotationImpl <em>Annotation</em>}' class.
@@ -1889,14 +1814,6 @@ public interface McnPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VALUE_DOMAIN = eINSTANCE.getValueDomain();
-
-		/**
-		 * The meta object literal for the '<em><b>Dataelement</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VALUE_DOMAIN__DATAELEMENT = eINSTANCE.getValueDomain_Dataelement();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.

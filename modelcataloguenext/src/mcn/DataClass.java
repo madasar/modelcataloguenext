@@ -14,13 +14,13 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link mcn.DataClass#getExtends <em>Extends</em>}</li>
  *   <li>{@link mcn.DataClass#getContains <em>Contains</em>}</li>
- *   <li>{@link mcn.DataClass#getDatamodel <em>Datamodel</em>}</li>
- *   <li>{@link mcn.DataClass#getDataelements <em>Dataelements</em>}</li>
+ *   <li>{@link mcn.DataClass#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
  * @see mcn.McnPackage#getDataClass()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NonSelf_clones'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NonSelf_clones='Tuple {\n\tmessage : String = \'The \\\'DataClass\\\' \"\' + self.toString() + \'\" cannot clone itself\',\n\tstatus : Boolean = \n\t\t\tself.contains <> self\n}.status'"
  * @generated
  */
 public interface DataClass extends AdminsteredItem {
@@ -67,49 +67,19 @@ public interface DataClass extends AdminsteredItem {
 	EList<DataClass> getContains();
 
 	/**
-	 * Returns the value of the '<em><b>Datamodel</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link mcn.DataModel#getDataclasses <em>Dataclasses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Datamodel</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Datamodel</em>' reference.
-	 * @see #setDatamodel(DataModel)
-	 * @see mcn.McnPackage#getDataClass_Datamodel()
-	 * @see mcn.DataModel#getDataclasses
-	 * @model opposite="dataclasses" required="true"
-	 * @generated
-	 */
-	DataModel getDatamodel();
-
-	/**
-	 * Sets the value of the '{@link mcn.DataClass#getDatamodel <em>Datamodel</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Datamodel</em>' reference.
-	 * @see #getDatamodel()
-	 * @generated
-	 */
-	void setDatamodel(DataModel value);
-
-	/**
-	 * Returns the value of the '<em><b>Dataelements</b></em>' reference list.
+	 * Returns the value of the '<em><b>Elements</b></em>' reference list.
 	 * The list contents are of type {@link mcn.DataElement}.
-	 * It is bidirectional and its opposite is '{@link mcn.DataElement#getDataclass <em>Dataclass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dataelements</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Elements</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dataelements</em>' reference list.
-	 * @see mcn.McnPackage#getDataClass_Dataelements()
-	 * @see mcn.DataElement#getDataclass
-	 * @model opposite="dataclass"
+	 * @return the value of the '<em>Elements</em>' reference list.
+	 * @see mcn.McnPackage#getDataClass_Elements()
+	 * @model
 	 * @generated
 	 */
-	EList<DataElement> getDataelements();
+	EList<DataElement> getElements();
 
 } // DataClass

@@ -15,9 +15,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link mcn.DataModel#isFinalised <em>Finalised</em>}</li>
- *   <li>{@link mcn.DataModel#getDataclasses <em>Dataclasses</em>}</li>
  *   <li>{@link mcn.DataModel#getReleaseLabel <em>Release Label</em>}</li>
  *   <li>{@link mcn.DataModel#getFinalisedDate <em>Finalised Date</em>}</li>
+ *   <li>{@link mcn.DataModel#getDataclasses <em>Dataclasses</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +52,6 @@ public interface DataModel extends AdminsteredItem {
 	 * @generated
 	 */
 	void setFinalised(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Dataclasses</b></em>' reference list.
-	 * The list contents are of type {@link mcn.DataClass}.
-	 * It is bidirectional and its opposite is '{@link mcn.DataClass#getDatamodel <em>Datamodel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dataclasses</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dataclasses</em>' reference list.
-	 * @see mcn.McnPackage#getDataModel_Dataclasses()
-	 * @see mcn.DataClass#getDatamodel
-	 * @model opposite="datamodel"
-	 * @generated
-	 */
-	EList<DataClass> getDataclasses();
 
 	/**
 	 * Returns the value of the '<em><b>Release Label</b></em>' attribute.
@@ -122,5 +104,21 @@ public interface DataModel extends AdminsteredItem {
 	 * @generated
 	 */
 	void setFinalisedDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Dataclasses</b></em>' reference list.
+	 * The list contents are of type {@link mcn.DataClass}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dataclasses</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dataclasses</em>' reference list.
+	 * @see mcn.McnPackage#getDataModel_Dataclasses()
+	 * @model
+	 * @generated
+	 */
+	EList<DataClass> getDataclasses();
 
 } // DataModel

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/modelcataloguenext/src" modelPluginID="modelcataloguenext"
+    modelName="Mcn" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mcn.ecore</foreignModel>
+  <genPackages prefix="Mcn" disposableProviderFactory="true" ecorePackage="mcn.ecore#/">
+    <genClasses image="false" ecoreClass="mcn.ecore#//CatalogueElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//CatalogueElement/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//CatalogueElement/GUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//CatalogueElement/dateCreated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//CatalogueElement/createdByUser"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//CatalogueElement/contraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//CatalogueElement/tags"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//DataModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//DataModel/finalised"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//DataModel/releaseLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//DataModel/finalisedDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//DataModel/declares"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//DataModel/owns"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//DataClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//DataClass/xtends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//DataClass/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//DataClass/defines"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//DataItem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//DataItem/type"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//DataConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//DataConstraint/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//DataConstraint/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mcn.ecore#//DataType"/>
+    <genClasses ecoreClass="mcn.ecore#//ReferenceType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//ReferenceType/relatedTo"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//PrimitiveType"/>
+    <genClasses ecoreClass="mcn.ecore#//Relationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//Relationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//Relationship/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mcn.ecore#//Relationship/type"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//Tag"/>
+    <genClasses ecoreClass="mcn.ecore#//EnumValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mcn.ecore#//EnumValue/type"/>
+    </genClasses>
+    <genClasses ecoreClass="mcn.ecore#//Enumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mcn.ecore#//Enumeration/values"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
