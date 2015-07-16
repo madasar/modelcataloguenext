@@ -449,7 +449,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_uGxywSu4EeWixKuWJvUXxQ" routing="Rectilinear"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_uGxywiu4EeWixKuWJvUXxQ" fontColor="7490599" fontName=".Helvetica Neue DeskInterface" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uGxywyu4EeWixKuWJvUXxQ" points="[60, 5, -209, 5]$[192, 5, -77, 5]$[192, 10, -77, 10]$[210, 10, -59, 10]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uGxywyu4EeWixKuWJvUXxQ" points="[60, 10, -209, 10]$[210, 10, -59, 10]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uGzA5Cu4EeWixKuWJvUXxQ" id="(0.5,0.5)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uGzn8Cu4EeWixKuWJvUXxQ" id="(0.5,0.5)"/>
           </edges>
