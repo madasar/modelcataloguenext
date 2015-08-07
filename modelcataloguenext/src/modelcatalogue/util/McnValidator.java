@@ -195,7 +195,7 @@ public class McnValidator extends EObjectValidator {
 	protected static final String DATA_CLASS__NON_SELF_EXTENDS__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The \\'DataClass\\' \"' + self.toString() + '\" cannot extend itself',\n" +
 		"\tstatus : Boolean = \n" +
-		"\t\t\tnot self.contains -> closure(xtends) -> includes(self) \n" +
+		"\t\t\tnot self.extends -> closure(extends) -> includes(self) \n" +
 		"}.status";
 
 	/**

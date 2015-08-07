@@ -2,8 +2,6 @@
  */
 package modelcatalogue;
 
-import java.math.BigInteger;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -86,12 +84,12 @@ public interface Relationship extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(BigInteger)
+	 * @see #setType(int)
 	 * @see modelcatalogue.McnPackage#getRelationship_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	BigInteger getType();
+	int getType();
 
 	/**
 	 * Sets the value of the '{@link modelcatalogue.Relationship#getType <em>Type</em>}' attribute.
@@ -101,6 +99,6 @@ public interface Relationship extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(BigInteger value);
+	void setType(int value);
 
 } // Relationship

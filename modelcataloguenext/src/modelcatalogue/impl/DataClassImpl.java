@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link modelcatalogue.impl.DataClassImpl#getXtends <em>Xtends</em>}</li>
+ *   <li>{@link modelcatalogue.impl.DataClassImpl#getExtends <em>Extends</em>}</li>
  *   <li>{@link modelcatalogue.impl.DataClassImpl#getContains <em>Contains</em>}</li>
  *   <li>{@link modelcatalogue.impl.DataClassImpl#getDefines <em>Defines</em>}</li>
  * </ul>
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	/**
-	 * The cached value of the '{@link #getXtends() <em>Xtends</em>}' reference.
+	 * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getXtends()
+	 * @see #getExtends()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataClass xtends;
+	protected DataClass extends_;
 
 	/**
 	 * The cached value of the '{@link #getContains() <em>Contains</em>}' reference list.
@@ -92,16 +92,16 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataClass getXtends() {
-		if (xtends != null && xtends.eIsProxy()) {
-			InternalEObject oldXtends = (InternalEObject)xtends;
-			xtends = (DataClass)eResolveProxy(oldXtends);
-			if (xtends != oldXtends) {
+	public DataClass getExtends() {
+		if (extends_ != null && extends_.eIsProxy()) {
+			InternalEObject oldExtends = (InternalEObject)extends_;
+			extends_ = (DataClass)eResolveProxy(oldExtends);
+			if (extends_ != oldExtends) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, McnPackage.DATA_CLASS__XTENDS, oldXtends, xtends));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, McnPackage.DATA_CLASS__EXTENDS, oldExtends, extends_));
 			}
 		}
-		return xtends;
+		return extends_;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataClass basicGetXtends() {
-		return xtends;
+	public DataClass basicGetExtends() {
+		return extends_;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setXtends(DataClass newXtends) {
-		DataClass oldXtends = xtends;
-		xtends = newXtends;
+	public void setExtends(DataClass newExtends) {
+		DataClass oldExtends = extends_;
+		extends_ = newExtends;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.DATA_CLASS__XTENDS, oldXtends, xtends));
+			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.DATA_CLASS__EXTENDS, oldExtends, extends_));
 	}
 
 	/**
@@ -171,9 +171,9 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case McnPackage.DATA_CLASS__XTENDS:
-				if (resolve) return getXtends();
-				return basicGetXtends();
+			case McnPackage.DATA_CLASS__EXTENDS:
+				if (resolve) return getExtends();
+				return basicGetExtends();
 			case McnPackage.DATA_CLASS__CONTAINS:
 				return getContains();
 			case McnPackage.DATA_CLASS__DEFINES:
@@ -191,8 +191,8 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case McnPackage.DATA_CLASS__XTENDS:
-				setXtends((DataClass)newValue);
+			case McnPackage.DATA_CLASS__EXTENDS:
+				setExtends((DataClass)newValue);
 				return;
 			case McnPackage.DATA_CLASS__CONTAINS:
 				getContains().clear();
@@ -214,8 +214,8 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case McnPackage.DATA_CLASS__XTENDS:
-				setXtends((DataClass)null);
+			case McnPackage.DATA_CLASS__EXTENDS:
+				setExtends((DataClass)null);
 				return;
 			case McnPackage.DATA_CLASS__CONTAINS:
 				getContains().clear();
@@ -235,8 +235,8 @@ public class DataClassImpl extends CatalogueElementImpl implements DataClass {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case McnPackage.DATA_CLASS__XTENDS:
-				return xtends != null;
+			case McnPackage.DATA_CLASS__EXTENDS:
+				return extends_ != null;
 			case McnPackage.DATA_CLASS__CONTAINS:
 				return contains != null && !contains.isEmpty();
 			case McnPackage.DATA_CLASS__DEFINES:

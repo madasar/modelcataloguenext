@@ -105,13 +105,13 @@ public interface McnPackage extends EPackage {
 	int CATALOGUE_ELEMENT__CREATED_BY_USER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOGUE_ELEMENT__CONTRAINTS = 4;
+	int CATALOGUE_ELEMENT__CONSTRAINTS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -187,13 +187,13 @@ public interface McnPackage extends EPackage {
 	int DATA_MODEL__CREATED_BY_USER = CATALOGUE_ELEMENT__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MODEL__CONTRAINTS = CATALOGUE_ELEMENT__CONTRAINTS;
+	int DATA_MODEL__CONSTRAINTS = CATALOGUE_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -314,13 +314,13 @@ public interface McnPackage extends EPackage {
 	int DATA_CLASS__CREATED_BY_USER = CATALOGUE_ELEMENT__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CLASS__CONTRAINTS = CATALOGUE_ELEMENT__CONTRAINTS;
+	int DATA_CLASS__CONSTRAINTS = CATALOGUE_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -332,13 +332,13 @@ public interface McnPackage extends EPackage {
 	int DATA_CLASS__TAGS = CATALOGUE_ELEMENT__TAGS;
 
 	/**
-	 * The feature id for the '<em><b>Xtends</b></em>' reference.
+	 * The feature id for the '<em><b>Extends</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CLASS__XTENDS = CATALOGUE_ELEMENT_FEATURE_COUNT + 0;
+	int DATA_CLASS__EXTENDS = CATALOGUE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Contains</b></em>' reference list.
@@ -423,13 +423,13 @@ public interface McnPackage extends EPackage {
 	int DATA_ITEM__CREATED_BY_USER = CATALOGUE_ELEMENT__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_ITEM__CONTRAINTS = CATALOGUE_ELEMENT__CONTRAINTS;
+	int DATA_ITEM__CONSTRAINTS = CATALOGUE_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -487,13 +487,13 @@ public interface McnPackage extends EPackage {
 	int DATA_CONSTRAINT__LANGUAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_CONSTRAINT__VALUE = 1;
+	int DATA_CONSTRAINT__CONTENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Data Constraint</em>' class.
@@ -560,13 +560,13 @@ public interface McnPackage extends EPackage {
 	int DATA_TYPE__CREATED_BY_USER = CATALOGUE_ELEMENT__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE__CONTRAINTS = CATALOGUE_ELEMENT__CONTRAINTS;
+	int DATA_TYPE__CONSTRAINTS = CATALOGUE_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -642,13 +642,13 @@ public interface McnPackage extends EPackage {
 	int REFERENCE_TYPE__CREATED_BY_USER = DATA_TYPE__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_TYPE__CONTRAINTS = DATA_TYPE__CONTRAINTS;
+	int REFERENCE_TYPE__CONSTRAINTS = DATA_TYPE__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -733,13 +733,13 @@ public interface McnPackage extends EPackage {
 	int PRIMITIVE_TYPE__CREATED_BY_USER = DATA_TYPE__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_TYPE__CONTRAINTS = DATA_TYPE__CONTRAINTS;
+	int PRIMITIVE_TYPE__CONSTRAINTS = DATA_TYPE__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -834,13 +834,31 @@ public interface McnPackage extends EPackage {
 	int TAG = 9;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__LABEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>URI</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__URI = 1;
+
+	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 0;
+	int TAG_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Tag</em>' class.
@@ -898,13 +916,13 @@ public interface McnPackage extends EPackage {
 	int ENUM_VALUE__CREATED_BY_USER = CATALOGUE_ELEMENT__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUM_VALUE__CONTRAINTS = CATALOGUE_ELEMENT__CONTRAINTS;
+	int ENUM_VALUE__CONSTRAINTS = CATALOGUE_ELEMENT__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -989,13 +1007,13 @@ public interface McnPackage extends EPackage {
 	int ENUMERATION__CREATED_BY_USER = DATA_TYPE__CREATED_BY_USER;
 
 	/**
-	 * The feature id for the '<em><b>Contraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__CONTRAINTS = DATA_TYPE__CONTRAINTS;
+	int ENUMERATION__CONSTRAINTS = DATA_TYPE__CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
@@ -1007,13 +1025,13 @@ public interface McnPackage extends EPackage {
 	int ENUMERATION__TAGS = DATA_TYPE__TAGS;
 
 	/**
-	 * The feature id for the '<em><b>Values</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ordered Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__VALUES = DATA_TYPE_FEATURE_COUNT + 0;
+	int ENUMERATION__ORDERED_VALUES = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration</em>' class.
@@ -1089,15 +1107,15 @@ public interface McnPackage extends EPackage {
 	EAttribute getCatalogueElement_CreatedByUser();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link modelcatalogue.CatalogueElement#getContraints <em>Contraints</em>}'.
+	 * Returns the meta object for the containment reference list '{@link modelcatalogue.CatalogueElement#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contraints</em>'.
-	 * @see modelcatalogue.CatalogueElement#getContraints()
+	 * @return the meta object for the containment reference list '<em>Constraints</em>'.
+	 * @see modelcatalogue.CatalogueElement#getConstraints()
 	 * @see #getCatalogueElement()
 	 * @generated
 	 */
-	EReference getCatalogueElement_Contraints();
+	EReference getCatalogueElement_Constraints();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link modelcatalogue.CatalogueElement#getTags <em>Tags</em>}'.
@@ -1186,15 +1204,15 @@ public interface McnPackage extends EPackage {
 	EClass getDataClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link modelcatalogue.DataClass#getXtends <em>Xtends</em>}'.
+	 * Returns the meta object for the reference '{@link modelcatalogue.DataClass#getExtends <em>Extends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Xtends</em>'.
-	 * @see modelcatalogue.DataClass#getXtends()
+	 * @return the meta object for the reference '<em>Extends</em>'.
+	 * @see modelcatalogue.DataClass#getExtends()
 	 * @see #getDataClass()
 	 * @generated
 	 */
-	EReference getDataClass_Xtends();
+	EReference getDataClass_Extends();
 
 	/**
 	 * Returns the meta object for the reference list '{@link modelcatalogue.DataClass#getContains <em>Contains</em>}'.
@@ -1261,15 +1279,15 @@ public interface McnPackage extends EPackage {
 	EAttribute getDataConstraint_Language();
 
 	/**
-	 * Returns the meta object for the attribute '{@link modelcatalogue.DataConstraint#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link modelcatalogue.DataConstraint#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see modelcatalogue.DataConstraint#getValue()
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see modelcatalogue.DataConstraint#getContent()
 	 * @see #getDataConstraint()
 	 * @generated
 	 */
-	EAttribute getDataConstraint_Value();
+	EAttribute getDataConstraint_Content();
 
 	/**
 	 * Returns the meta object for class '{@link modelcatalogue.DataType <em>Data Type</em>}'.
@@ -1366,6 +1384,28 @@ public interface McnPackage extends EPackage {
 	EClass getTag();
 
 	/**
+	 * Returns the meta object for the attribute '{@link modelcatalogue.Tag#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see modelcatalogue.Tag#getLabel()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_Label();
+
+	/**
+	 * Returns the meta object for the attribute '{@link modelcatalogue.Tag#getURI <em>URI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>URI</em>'.
+	 * @see modelcatalogue.Tag#getURI()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_URI();
+
+	/**
 	 * Returns the meta object for class '{@link modelcatalogue.EnumValue <em>Enum Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1397,15 +1437,15 @@ public interface McnPackage extends EPackage {
 	EClass getEnumeration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link modelcatalogue.Enumeration#getValues <em>Values</em>}'.
+	 * Returns the meta object for the containment reference list '{@link modelcatalogue.Enumeration#getOrderedValues <em>Ordered Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Values</em>'.
-	 * @see modelcatalogue.Enumeration#getValues()
+	 * @return the meta object for the containment reference list '<em>Ordered Values</em>'.
+	 * @see modelcatalogue.Enumeration#getOrderedValues()
 	 * @see #getEnumeration()
 	 * @generated
 	 */
-	EReference getEnumeration_Values();
+	EReference getEnumeration_OrderedValues();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1473,12 +1513,12 @@ public interface McnPackage extends EPackage {
 		EAttribute CATALOGUE_ELEMENT__CREATED_BY_USER = eINSTANCE.getCatalogueElement_CreatedByUser();
 
 		/**
-		 * The meta object literal for the '<em><b>Contraints</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CATALOGUE_ELEMENT__CONTRAINTS = eINSTANCE.getCatalogueElement_Contraints();
+		EReference CATALOGUE_ELEMENT__CONSTRAINTS = eINSTANCE.getCatalogueElement_Constraints();
 
 		/**
 		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
@@ -1549,12 +1589,12 @@ public interface McnPackage extends EPackage {
 		EClass DATA_CLASS = eINSTANCE.getDataClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Xtends</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Extends</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_CLASS__XTENDS = eINSTANCE.getDataClass_Xtends();
+		EReference DATA_CLASS__EXTENDS = eINSTANCE.getDataClass_Extends();
 
 		/**
 		 * The meta object literal for the '<em><b>Contains</b></em>' reference list feature.
@@ -1609,12 +1649,12 @@ public interface McnPackage extends EPackage {
 		EAttribute DATA_CONSTRAINT__LANGUAGE = eINSTANCE.getDataConstraint_Language();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DATA_CONSTRAINT__VALUE = eINSTANCE.getDataConstraint_Value();
+		EAttribute DATA_CONSTRAINT__CONTENT = eINSTANCE.getDataConstraint_Content();
 
 		/**
 		 * The meta object literal for the '{@link modelcatalogue.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -1699,6 +1739,22 @@ public interface McnPackage extends EPackage {
 		EClass TAG = eINSTANCE.getTag();
 
 		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__LABEL = eINSTANCE.getTag_Label();
+
+		/**
+		 * The meta object literal for the '<em><b>URI</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__URI = eINSTANCE.getTag_URI();
+
+		/**
 		 * The meta object literal for the '{@link modelcatalogue.impl.EnumValueImpl <em>Enum Value</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1727,12 +1783,12 @@ public interface McnPackage extends EPackage {
 		EClass ENUMERATION = eINSTANCE.getEnumeration();
 
 		/**
-		 * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ordered Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENUMERATION__VALUES = eINSTANCE.getEnumeration_Values();
+		EReference ENUMERATION__ORDERED_VALUES = eINSTANCE.getEnumeration_OrderedValues();
 
 	}
 

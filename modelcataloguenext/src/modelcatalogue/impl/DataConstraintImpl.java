@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link modelcatalogue.impl.DataConstraintImpl#getLanguage <em>Language</em>}</li>
- *   <li>{@link modelcatalogue.impl.DataConstraintImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link modelcatalogue.impl.DataConstraintImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +48,24 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 	protected String language = LANGUAGE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
+	protected static final String CONTENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected String value = VALUE_EDEFAULT;
+	protected String content = CONTENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +112,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
-		return value;
+	public String getContent() {
+		return content;
 	}
 
 	/**
@@ -121,11 +121,11 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
+	public void setContent(String newContent) {
+		String oldContent = content;
+		content = newContent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.DATA_CONSTRAINT__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.DATA_CONSTRAINT__CONTENT, oldContent, content));
 	}
 
 	/**
@@ -138,8 +138,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
 				return getLanguage();
-			case McnPackage.DATA_CONSTRAINT__VALUE:
-				return getValue();
+			case McnPackage.DATA_CONSTRAINT__CONTENT:
+				return getContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,8 +155,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
 				setLanguage((String)newValue);
 				return;
-			case McnPackage.DATA_CONSTRAINT__VALUE:
-				setValue((String)newValue);
+			case McnPackage.DATA_CONSTRAINT__CONTENT:
+				setContent((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +173,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
 				return;
-			case McnPackage.DATA_CONSTRAINT__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case McnPackage.DATA_CONSTRAINT__CONTENT:
+				setContent(CONTENT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +190,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
-			case McnPackage.DATA_CONSTRAINT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case McnPackage.DATA_CONSTRAINT__CONTENT:
+				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +208,8 @@ public class DataConstraintImpl extends MinimalEObjectImpl.Container implements 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (language: ");
 		result.append(language);
-		result.append(", value: ");
-		result.append(value);
+		result.append(", content: ");
+		result.append(content);
 		result.append(')');
 		return result.toString();
 	}

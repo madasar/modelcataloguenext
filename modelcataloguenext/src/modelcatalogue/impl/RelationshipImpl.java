@@ -2,17 +2,12 @@
  */
 package modelcatalogue.impl;
 
-import java.math.BigInteger;
-
 import modelcatalogue.CatalogueElement;
 import modelcatalogue.McnPackage;
 import modelcatalogue.Relationship;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -60,7 +55,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigInteger TYPE_EDEFAULT = null;
+	protected static final int TYPE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -70,7 +65,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected BigInteger type = TYPE_EDEFAULT;
+	protected int type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,7 +167,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BigInteger getType() {
+	public int getType() {
 		return type;
 	}
 
@@ -181,8 +176,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(BigInteger newType) {
-		BigInteger oldType = type;
+	public void setType(int newType) {
+		int oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.RELATIONSHIP__TYPE, oldType, type));
@@ -223,7 +218,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				setTarget((CatalogueElement)newValue);
 				return;
 			case McnPackage.RELATIONSHIP__TYPE:
-				setType((BigInteger)newValue);
+				setType((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,7 +258,7 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 			case McnPackage.RELATIONSHIP__TARGET:
 				return target != null;
 			case McnPackage.RELATIONSHIP__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

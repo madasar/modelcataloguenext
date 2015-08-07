@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link modelcatalogue.impl.EnumerationImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link modelcatalogue.impl.EnumerationImpl#getOrderedValues <em>Ordered Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,15 +33,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	/**
-	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
+	 * The cached value of the '{@link #getOrderedValues() <em>Ordered Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValues()
+	 * @see #getOrderedValues()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EnumValue> values;
-
+	protected EList<EnumValue> orderedValues;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +65,11 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EnumValue> getValues() {
-		if (values == null) {
-			values = new EObjectContainmentEList<EnumValue>(EnumValue.class, this, McnPackage.ENUMERATION__VALUES);
+	public EList<EnumValue> getOrderedValues() {
+		if (orderedValues == null) {
+			orderedValues = new EObjectContainmentEList<EnumValue>(EnumValue.class, this, McnPackage.ENUMERATION__ORDERED_VALUES);
 		}
-		return values;
+		return orderedValues;
 	}
 
 	/**
@@ -81,8 +80,8 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case McnPackage.ENUMERATION__VALUES:
-				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
+				return ((InternalEList<?>)getOrderedValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +94,8 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case McnPackage.ENUMERATION__VALUES:
-				return getValues();
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
+				return getOrderedValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +109,9 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case McnPackage.ENUMERATION__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends EnumValue>)newValue);
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
+				getOrderedValues().clear();
+				getOrderedValues().addAll((Collection<? extends EnumValue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +125,8 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case McnPackage.ENUMERATION__VALUES:
-				getValues().clear();
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
+				getOrderedValues().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +140,8 @@ public class EnumerationImpl extends DataTypeImpl implements Enumeration {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case McnPackage.ENUMERATION__VALUES:
-				return values != null && !values.isEmpty();
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
+				return orderedValues != null && !orderedValues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,12 +2,8 @@
  */
 package modelcatalogue;
 
-import java.math.BigInteger;
-
 import java.util.Date;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link modelcatalogue.CatalogueElement#getGUID <em>GUID</em>}</li>
  *   <li>{@link modelcatalogue.CatalogueElement#getDateCreated <em>Date Created</em>}</li>
  *   <li>{@link modelcatalogue.CatalogueElement#getCreatedByUser <em>Created By User</em>}</li>
- *   <li>{@link modelcatalogue.CatalogueElement#getContraints <em>Contraints</em>}</li>
+ *   <li>{@link modelcatalogue.CatalogueElement#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link modelcatalogue.CatalogueElement#getTags <em>Tags</em>}</li>
  * </ul>
  * </p>
@@ -43,7 +39,7 @@ public interface CatalogueElement extends EObject {
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see modelcatalogue.McnPackage#getCatalogueElement_Label()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getLabel();
@@ -69,7 +65,7 @@ public interface CatalogueElement extends EObject {
 	 * @return the value of the '<em>GUID</em>' attribute.
 	 * @see #setGUID(String)
 	 * @see modelcatalogue.McnPackage#getCatalogueElement_GUID()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getGUID();
@@ -119,12 +115,12 @@ public interface CatalogueElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Created By User</em>' attribute.
-	 * @see #setCreatedByUser(BigInteger)
+	 * @see #setCreatedByUser(int)
 	 * @see modelcatalogue.McnPackage#getCatalogueElement_CreatedByUser()
 	 * @model required="true"
 	 * @generated
 	 */
-	BigInteger getCreatedByUser();
+	int getCreatedByUser();
 
 	/**
 	 * Sets the value of the '{@link modelcatalogue.CatalogueElement#getCreatedByUser <em>Created By User</em>}' attribute.
@@ -134,23 +130,23 @@ public interface CatalogueElement extends EObject {
 	 * @see #getCreatedByUser()
 	 * @generated
 	 */
-	void setCreatedByUser(BigInteger value);
+	void setCreatedByUser(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Contraints</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link modelcatalogue.DataConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Contraints</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Constraints</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contraints</em>' containment reference list.
-	 * @see modelcatalogue.McnPackage#getCatalogueElement_Contraints()
+	 * @return the value of the '<em>Constraints</em>' containment reference list.
+	 * @see modelcatalogue.McnPackage#getCatalogueElement_Constraints()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DataConstraint> getContraints();
+	EList<DataConstraint> getConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.

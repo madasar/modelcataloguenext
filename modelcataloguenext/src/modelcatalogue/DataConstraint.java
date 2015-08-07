@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link modelcatalogue.DataConstraint#getLanguage <em>Language</em>}</li>
- *   <li>{@link modelcatalogue.DataConstraint#getValue <em>Value</em>}</li>
+ *   <li>{@link modelcatalogue.DataConstraint#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,7 +33,7 @@ public interface DataConstraint extends EObject {
 	 * @return the value of the '<em>Language</em>' attribute.
 	 * @see #setLanguage(String)
 	 * @see modelcatalogue.McnPackage#getDataConstraint_Language()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getLanguage();
@@ -49,29 +49,29 @@ public interface DataConstraint extends EObject {
 	void setLanguage(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Content</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see modelcatalogue.McnPackage#getDataConstraint_Value()
-	 * @model
+	 * @return the value of the '<em>Content</em>' attribute.
+	 * @see #setContent(String)
+	 * @see modelcatalogue.McnPackage#getDataConstraint_Content()
+	 * @model required="true"
 	 * @generated
 	 */
-	String getValue();
+	String getContent();
 
 	/**
-	 * Sets the value of the '{@link modelcatalogue.DataConstraint#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link modelcatalogue.DataConstraint#getContent <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>Content</em>' attribute.
+	 * @see #getContent()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setContent(String value);
 
 } // DataConstraint

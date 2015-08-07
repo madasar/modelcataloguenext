@@ -2,27 +2,19 @@
  */
 package modelcatalogue.impl;
 
-import java.math.BigInteger;
-
 import java.util.Collection;
 import java.util.Date;
-
 import modelcatalogue.CatalogueElement;
 import modelcatalogue.DataConstraint;
 import modelcatalogue.McnPackage;
 import modelcatalogue.Tag;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getGUID <em>GUID</em>}</li>
  *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getDateCreated <em>Date Created</em>}</li>
  *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getCreatedByUser <em>Created By User</em>}</li>
- *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getContraints <em>Contraints</em>}</li>
+ *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link modelcatalogue.impl.CatalogueElementImpl#getTags <em>Tags</em>}</li>
  * </ul>
  * </p>
@@ -113,7 +105,7 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigInteger CREATED_BY_USER_EDEFAULT = null;
+	protected static final int CREATED_BY_USER_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getCreatedByUser() <em>Created By User</em>}' attribute.
@@ -123,17 +115,17 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	 * @generated
 	 * @ordered
 	 */
-	protected BigInteger createdByUser = CREATED_BY_USER_EDEFAULT;
+	protected int createdByUser = CREATED_BY_USER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContraints() <em>Contraints</em>}' containment reference list.
+	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContraints()
+	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataConstraint> contraints;
+	protected EList<DataConstraint> constraints;
 
 	/**
 	 * The cached value of the '{@link #getTags() <em>Tags</em>}' containment reference list.
@@ -232,7 +224,7 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BigInteger getCreatedByUser() {
+	public int getCreatedByUser() {
 		return createdByUser;
 	}
 
@@ -241,8 +233,8 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCreatedByUser(BigInteger newCreatedByUser) {
-		BigInteger oldCreatedByUser = createdByUser;
+	public void setCreatedByUser(int newCreatedByUser) {
+		int oldCreatedByUser = createdByUser;
 		createdByUser = newCreatedByUser;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER, oldCreatedByUser, createdByUser));
@@ -253,11 +245,11 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataConstraint> getContraints() {
-		if (contraints == null) {
-			contraints = new EObjectContainmentEList<DataConstraint>(DataConstraint.class, this, McnPackage.CATALOGUE_ELEMENT__CONTRAINTS);
+	public EList<DataConstraint> getConstraints() {
+		if (constraints == null) {
+			constraints = new EObjectContainmentEList<DataConstraint>(DataConstraint.class, this, McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS);
 		}
-		return contraints;
+		return constraints;
 	}
 
 	/**
@@ -280,8 +272,8 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
-				return ((InternalEList<?>)getContraints()).basicRemove(otherEnd, msgs);
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
+				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
 		}
@@ -304,8 +296,8 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 				return getDateCreated();
 			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
 				return getCreatedByUser();
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
-				return getContraints();
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
+				return getConstraints();
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				return getTags();
 		}
@@ -331,11 +323,11 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 				setDateCreated((Date)newValue);
 				return;
 			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
-				setCreatedByUser((BigInteger)newValue);
+				setCreatedByUser((Integer)newValue);
 				return;
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
-				getContraints().clear();
-				getContraints().addAll((Collection<? extends DataConstraint>)newValue);
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
+				getConstraints().clear();
+				getConstraints().addAll((Collection<? extends DataConstraint>)newValue);
 				return;
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				getTags().clear();
@@ -365,8 +357,8 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
 				setCreatedByUser(CREATED_BY_USER_EDEFAULT);
 				return;
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
-				getContraints().clear();
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
+				getConstraints().clear();
 				return;
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				getTags().clear();
@@ -390,9 +382,9 @@ public abstract class CatalogueElementImpl extends MinimalEObjectImpl.Container 
 			case McnPackage.CATALOGUE_ELEMENT__DATE_CREATED:
 				return DATE_CREATED_EDEFAULT == null ? dateCreated != null : !DATE_CREATED_EDEFAULT.equals(dateCreated);
 			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
-				return CREATED_BY_USER_EDEFAULT == null ? createdByUser != null : !CREATED_BY_USER_EDEFAULT.equals(createdByUser);
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
-				return contraints != null && !contraints.isEmpty();
+				return createdByUser != CREATED_BY_USER_EDEFAULT;
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
+				return constraints != null && !constraints.isEmpty();
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				return tags != null && !tags.isEmpty();
 		}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mcn:DataModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mcn="http://models.cs.ox.ac.uk/ns/modelcatalogue" label="Alpha" GUID="http://abc/" dateCreated="2010-01-01T00:00:00.000+0000" releaseLabel="stable" finalisedDate="2010-01-01T00:00:00.000+0000">
+  <declares label="A" GUID="" dateCreated="2010-01-01T00:00:00.000+0000"/>
+  <owns xsi:type="mcn:ReferenceType"/>
+  <owns xsi:type="mcn:PrimitiveType"/>
+  <owns xsi:type="mcn:Enumeration"/>
+</mcn:DataModel>

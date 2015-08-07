@@ -11,21 +11,22 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="CatalogueElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GUID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateCreated" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createdByUser" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contraints" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
         eType="#//DataConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataModel" eSuperTypes="#//CatalogueElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="finalised" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="finalised" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseLabel" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="finalisedDate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declares" ordered="false"
@@ -39,9 +40,9 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="NonSelf_contains" value="Tuple {&#xA;&#x9;message : String = 'The \'DataClass\' &quot;' + self.toString() + '&quot; cannot contain itself',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;not self.contains -> closure(contains) -> includes(self) &#xA;}.status"/>
-      <details key="NonSelf_extends" value="Tuple {&#xA;&#x9;message : String = 'The \'DataClass\' &quot;' + self.toString() + '&quot; cannot extend itself',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;not self.contains -> closure(xtends) -> includes(self) &#xA;}.status"/>
+      <details key="NonSelf_extends" value="Tuple {&#xA;&#x9;message : String = 'The \'DataClass\' &quot;' + self.toString() + '&quot; cannot extend itself',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;not self.extends -> closure(extends) -> includes(self) &#xA;}.status"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="xtends" eType="#//DataClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//DataClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" ordered="false"
         upperBound="-1" eType="#//DataClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defines" ordered="false"
@@ -51,8 +52,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataConstraint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//CatalogueElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceType" eSuperTypes="#//DataType">
@@ -65,14 +68,17 @@
         eType="#//CatalogueElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//CatalogueElement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tag"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumValue" eSuperTypes="#//CatalogueElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//PrimitiveType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OrderedValues" upperBound="-1"
         eType="#//EnumValue" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

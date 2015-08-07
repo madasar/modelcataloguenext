@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link modelcatalogue.Enumeration#getValues <em>Values</em>}</li>
+ *   <li>{@link modelcatalogue.Enumeration#getOrderedValues <em>Ordered Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Enumeration extends DataType {
 	/**
-	 * Returns the value of the '<em><b>Values</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Ordered Values</b></em>' containment reference list.
 	 * The list contents are of type {@link modelcatalogue.EnumValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Ordered Values</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' containment reference list.
-	 * @see modelcatalogue.McnPackage#getEnumeration_Values()
+	 * @return the value of the '<em>Ordered Values</em>' containment reference list.
+	 * @see modelcatalogue.McnPackage#getEnumeration_OrderedValues()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EnumValue> getValues();
+	EList<EnumValue> getOrderedValues();
 
 } // Enumeration

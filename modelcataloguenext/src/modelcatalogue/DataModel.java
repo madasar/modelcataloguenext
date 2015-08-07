@@ -39,7 +39,7 @@ public interface DataModel extends CatalogueElement {
 	 * @return the value of the '<em>Finalised</em>' attribute.
 	 * @see #setFinalised(boolean)
 	 * @see modelcatalogue.McnPackage#getDataModel_Finalised()
-	 * @model default="false"
+	 * @model default="false" required="true"
 	 * @generated
 	 */
 	boolean isFinalised();
@@ -65,7 +65,7 @@ public interface DataModel extends CatalogueElement {
 	 * @return the value of the '<em>Release Label</em>' attribute.
 	 * @see #setReleaseLabel(String)
 	 * @see modelcatalogue.McnPackage#getDataModel_ReleaseLabel()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getReleaseLabel();

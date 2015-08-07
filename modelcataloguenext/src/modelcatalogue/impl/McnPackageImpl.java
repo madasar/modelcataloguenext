@@ -238,7 +238,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCatalogueElement_Contraints() {
+	public EReference getCatalogueElement_Constraints() {
 		return (EReference)catalogueElementEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -319,7 +319,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataClass_Xtends() {
+	public EReference getDataClass_Extends() {
 		return (EReference)dataClassEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -382,7 +382,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataConstraint_Value() {
+	public EAttribute getDataConstraint_Content() {
 		return (EAttribute)dataConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -472,6 +472,24 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTag_Label() {
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTag_URI() {
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEnumValue() {
 		return enumValueEClass;
 	}
@@ -499,7 +517,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnumeration_Values() {
+	public EReference getEnumeration_OrderedValues() {
 		return (EReference)enumerationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -536,7 +554,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		createEAttribute(catalogueElementEClass, CATALOGUE_ELEMENT__GUID);
 		createEAttribute(catalogueElementEClass, CATALOGUE_ELEMENT__DATE_CREATED);
 		createEAttribute(catalogueElementEClass, CATALOGUE_ELEMENT__CREATED_BY_USER);
-		createEReference(catalogueElementEClass, CATALOGUE_ELEMENT__CONTRAINTS);
+		createEReference(catalogueElementEClass, CATALOGUE_ELEMENT__CONSTRAINTS);
 		createEReference(catalogueElementEClass, CATALOGUE_ELEMENT__TAGS);
 
 		dataModelEClass = createEClass(DATA_MODEL);
@@ -547,7 +565,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		createEReference(dataModelEClass, DATA_MODEL__OWNS);
 
 		dataClassEClass = createEClass(DATA_CLASS);
-		createEReference(dataClassEClass, DATA_CLASS__XTENDS);
+		createEReference(dataClassEClass, DATA_CLASS__EXTENDS);
 		createEReference(dataClassEClass, DATA_CLASS__CONTAINS);
 		createEReference(dataClassEClass, DATA_CLASS__DEFINES);
 
@@ -556,7 +574,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 
 		dataConstraintEClass = createEClass(DATA_CONSTRAINT);
 		createEAttribute(dataConstraintEClass, DATA_CONSTRAINT__LANGUAGE);
-		createEAttribute(dataConstraintEClass, DATA_CONSTRAINT__VALUE);
+		createEAttribute(dataConstraintEClass, DATA_CONSTRAINT__CONTENT);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -571,12 +589,14 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		createEAttribute(relationshipEClass, RELATIONSHIP__TYPE);
 
 		tagEClass = createEClass(TAG);
+		createEAttribute(tagEClass, TAG__LABEL);
+		createEAttribute(tagEClass, TAG__URI);
 
 		enumValueEClass = createEClass(ENUM_VALUE);
 		createEReference(enumValueEClass, ENUM_VALUE__TYPE);
 
 		enumerationEClass = createEClass(ENUMERATION);
-		createEReference(enumerationEClass, ENUMERATION__VALUES);
+		createEReference(enumerationEClass, ENUMERATION__ORDERED_VALUES);
 	}
 
 	/**
@@ -618,22 +638,22 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(catalogueElementEClass, CatalogueElement.class, "CatalogueElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCatalogueElement_Label(), ecorePackage.getEString(), "label", null, 0, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCatalogueElement_GUID(), ecorePackage.getEString(), "GUID", null, 0, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCatalogueElement_Label(), ecorePackage.getEString(), "label", null, 1, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCatalogueElement_GUID(), ecorePackage.getEString(), "GUID", null, 1, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCatalogueElement_DateCreated(), ecorePackage.getEDate(), "dateCreated", null, 1, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCatalogueElement_CreatedByUser(), ecorePackage.getEBigInteger(), "createdByUser", null, 1, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCatalogueElement_Contraints(), this.getDataConstraint(), null, "contraints", null, 0, -1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCatalogueElement_CreatedByUser(), ecorePackage.getEInt(), "createdByUser", null, 1, 1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCatalogueElement_Constraints(), this.getDataConstraint(), null, "constraints", null, 0, -1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCatalogueElement_Tags(), this.getTag(), null, "tags", null, 0, -1, CatalogueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataModelEClass, DataModel.class, "DataModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataModel_Finalised(), ecorePackage.getEBoolean(), "finalised", "false", 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataModel_ReleaseLabel(), ecorePackage.getEString(), "releaseLabel", null, 0, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_Finalised(), ecorePackage.getEBoolean(), "finalised", "false", 1, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataModel_ReleaseLabel(), ecorePackage.getEString(), "releaseLabel", null, 1, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataModel_FinalisedDate(), ecorePackage.getEDate(), "finalisedDate", null, 1, 1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataModel_Declares(), this.getDataClass(), null, "declares", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDataModel_Owns(), this.getDataType(), null, "owns", null, 0, -1, DataModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dataClassEClass, DataClass.class, "DataClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataClass_Xtends(), this.getDataClass(), null, "xtends", null, 0, 1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataClass_Extends(), this.getDataClass(), null, "extends", null, 0, 1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataClass_Contains(), this.getDataClass(), null, "contains", null, 0, -1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDataClass_Defines(), this.getDataItem(), null, "defines", null, 0, -1, DataClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -641,8 +661,8 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		initEReference(getDataItem_Type(), this.getDataType(), null, "type", null, 0, 1, DataItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataConstraintEClass, DataConstraint.class, "DataConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataConstraint_Language(), ecorePackage.getEString(), "language", null, 0, 1, DataConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataConstraint_Value(), ecorePackage.getEString(), "value", null, 0, 1, DataConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataConstraint_Language(), ecorePackage.getEString(), "language", null, 1, 1, DataConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataConstraint_Content(), ecorePackage.getEString(), "content", null, 1, 1, DataConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -654,15 +674,17 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelationship_Source(), this.getCatalogueElement(), null, "source", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationship_Target(), this.getCatalogueElement(), null, "target", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRelationship_Type(), ecorePackage.getEBigInteger(), "type", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelationship_Type(), ecorePackage.getEInt(), "type", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTag_Label(), ecorePackage.getEString(), "label", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_URI(), ecorePackage.getEString(), "URI", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumValueEClass, EnumValue.class, "EnumValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumValue_Type(), this.getPrimitiveType(), null, "type", null, 1, 1, EnumValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumeration_Values(), this.getEnumValue(), null, "values", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumeration_OrderedValues(), this.getEnumValue(), null, "OrderedValues", null, 0, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -729,7 +751,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 		   source, 
 		   new String[] {
 			 "NonSelf_contains", "Tuple {\n\tmessage : String = \'The \\\'DataClass\\\' \"\' + self.toString() + \'\" cannot contain itself\',\n\tstatus : Boolean = \n\t\t\tnot self.contains -> closure(contains) -> includes(self) \n}.status",
-			 "NonSelf_extends", "Tuple {\n\tmessage : String = \'The \\\'DataClass\\\' \"\' + self.toString() + \'\" cannot extend itself\',\n\tstatus : Boolean = \n\t\t\tnot self.contains -> closure(xtends) -> includes(self) \n}.status"
+			 "NonSelf_extends", "Tuple {\n\tmessage : String = \'The \\\'DataClass\\\' \"\' + self.toString() + \'\" cannot extend itself\',\n\tstatus : Boolean = \n\t\t\tnot self.extends -> closure(extends) -> includes(self) \n}.status"
 		   });
 	}
 
