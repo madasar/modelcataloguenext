@@ -62,7 +62,7 @@ public class EnumerationItemProvider extends DataTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(McnPackage.Literals.ENUMERATION__VALUES);
+			childrenFeatures.add(McnPackage.Literals.ENUMERATION__ORDERED_VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class EnumerationItemProvider extends DataTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Enumeration.class)) {
-			case McnPackage.ENUMERATION__VALUES:
+			case McnPackage.ENUMERATION__ORDERED_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,7 +138,7 @@ public class EnumerationItemProvider extends DataTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(McnPackage.Literals.ENUMERATION__VALUES,
+				(McnPackage.Literals.ENUMERATION__ORDERED_VALUES,
 				 McnFactory.eINSTANCE.createEnumValue()));
 	}
 

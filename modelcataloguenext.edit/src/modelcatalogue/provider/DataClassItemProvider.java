@@ -47,26 +47,26 @@ public class DataClassItemProvider extends CatalogueElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addXtendsPropertyDescriptor(object);
+			addExtendsPropertyDescriptor(object);
 			addContainsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Xtends feature.
+	 * This adds a property descriptor for the Extends feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addXtendsPropertyDescriptor(Object object) {
+	protected void addExtendsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataClass_xtends_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataClass_xtends_feature", "_UI_DataClass_type"),
-				 McnPackage.Literals.DATA_CLASS__XTENDS,
+				 getString("_UI_DataClass_extends_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataClass_extends_feature", "_UI_DataClass_type"),
+				 McnPackage.Literals.DATA_CLASS__EXTENDS,
 				 true,
 				 false,
 				 true,

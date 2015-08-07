@@ -61,7 +61,7 @@ public class DataConstraintItemProvider
 			super.getPropertyDescriptors(object);
 
 			addLanguagePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addContentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,19 +89,19 @@ public class DataConstraintItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Content feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addContentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DataConstraint_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataConstraint_value_feature", "_UI_DataConstraint_type"),
-				 McnPackage.Literals.DATA_CONSTRAINT__VALUE,
+				 getString("_UI_DataConstraint_content_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataConstraint_content_feature", "_UI_DataConstraint_type"),
+				 McnPackage.Literals.DATA_CONSTRAINT__CONTENT,
 				 true,
 				 false,
 				 false,
@@ -149,7 +149,7 @@ public class DataConstraintItemProvider
 
 		switch (notification.getFeatureID(DataConstraint.class)) {
 			case McnPackage.DATA_CONSTRAINT__LANGUAGE:
-			case McnPackage.DATA_CONSTRAINT__VALUE:
+			case McnPackage.DATA_CONSTRAINT__CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -154,7 +154,7 @@ public class CatalogueElementItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -171,7 +171,7 @@ public class CatalogueElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(McnPackage.Literals.CATALOGUE_ELEMENT__CONTRAINTS);
+			childrenFeatures.add(McnPackage.Literals.CATALOGUE_ELEMENT__CONSTRAINTS);
 			childrenFeatures.add(McnPackage.Literals.CATALOGUE_ELEMENT__TAGS);
 		}
 		return childrenFeatures;
@@ -223,7 +223,7 @@ public class CatalogueElementItemProvider
 			case McnPackage.CATALOGUE_ELEMENT__CREATED_BY_USER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case McnPackage.CATALOGUE_ELEMENT__CONTRAINTS:
+			case McnPackage.CATALOGUE_ELEMENT__CONSTRAINTS:
 			case McnPackage.CATALOGUE_ELEMENT__TAGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -244,7 +244,7 @@ public class CatalogueElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(McnPackage.Literals.CATALOGUE_ELEMENT__CONTRAINTS,
+				(McnPackage.Literals.CATALOGUE_ELEMENT__CONSTRAINTS,
 				 McnFactory.eINSTANCE.createDataConstraint()));
 
 		newChildDescriptors.add

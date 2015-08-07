@@ -3,19 +3,13 @@
 package modelcatalogue.provider;
 
 
-import java.math.BigInteger;
-
 import java.util.Collection;
 import java.util.List;
-
 import modelcatalogue.McnPackage;
 import modelcatalogue.Relationship;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -130,7 +124,7 @@ public class RelationshipItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -154,11 +148,8 @@ public class RelationshipItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		BigInteger labelValue = ((Relationship)object).getType();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Relationship_type") :
-			getString("_UI_Relationship_type") + " " + label;
+		Relationship relationship = (Relationship)object;
+		return getString("_UI_Relationship_type") + " " + relationship.getType();
 	}
 	
 
