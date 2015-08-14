@@ -8,8 +8,7 @@ Bundle-Activator: modelcatalogue.presentation.McnEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: mcn.presentation,
- modelcatalogue.presentation
+Export-Package: modelcatalogue.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  modelcataloguenext.edit;visibility:=reexport,
