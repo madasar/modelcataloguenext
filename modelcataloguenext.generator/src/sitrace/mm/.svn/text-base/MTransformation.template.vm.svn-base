@@ -1,0 +1,52 @@
+package $MTransformation.getPackage();
+
+//import statements
+import $MTransformation.getRootRule().getSource().getCanonicalName();
+import $MTransformation.getRootRule().getTarget().getCanonicalName();
+
+import $MTransformation.getInstanceGenenerator().getCanonicalName();
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
+import sitra.Rule;
+import sitra.Transformer;
+import sitra.SimpleTransformerImpl;
+
+public class $MTransformation.getName(){
+
+	//the entry point of the transformation
+	public static void main(String[] args){
+		//set up the Transformer
+		Transformer transformer = new SimpleTransformerImpl(getRules());
+
+#set( $src = "$MTransformation.getRootRule().getSource().getSimpleName()")
+#set( $dst = "$MTransformation.getRootRule().getTarget().getSimpleName()")
+		//create the model generator
+		Iterator<$src> mm = new $MTransformation.getInstanceGenenerator().getSimpleName()();
+
+		//create a list to hold the results
+		List<$dst> results = new ArrayList<$dst>();
+
+		//get model instances to convert
+		while(mm.hasNext()){
+			$src next = mm.next();
+			System.out.println(next);
+			$dst result =  transformer.transform( $!{MTransformation.getRootRule().getName()}.class , next );
+			System.out.println(result);
+			results.add(result);
+		}
+	}
+
+	//a list of the transformation rules
+	static List<java.lang.Class<? extends Rule>> getRules(){
+		List<java.lang.Class<? extends Rule>> rules = new ArrayList<java.lang.Class<? extends Rule>>();
+#foreach($rule in $MTransformation.getAllRules())
+		rules.add( $!{rule.getName()}.class );
+#end
+		return rules;
+	}
+
+}
+

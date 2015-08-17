@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/kodkod.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="modelcataloguenext.generator/lib/darwin_x86_64"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-1.7-beta1-dep.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-1.7-beta1.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/lib/tools.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

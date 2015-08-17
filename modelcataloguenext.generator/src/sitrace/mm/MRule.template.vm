@@ -1,0 +1,207 @@
+#set( $i = 0 )
+#macro(inc)#set($i=$i+1)$i#end
+package $MRule.getPackage();
+
+//import statements
+import $MRule.getSource().getCanonicalName();
+import $MRule.getTarget().getCanonicalName();
+
+import sitra.Rule;
+import sitra.Transformer;
+#if ($MRule.checkTupleType() || $MRule.loadMetaModel())
+
+import $MRule.getTransformation().getInstanceGenenerator().getCanonicalName();
+#end
+#if($MRule.loadMetaModel())
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EObject;
+import java.util.List;
+
+#elseif($MRule.createEClassInstance())
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.EPackage;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
+
+#end
+
+public class $MRule.getName() implements Rule<$MRule.getSource().getSimpleName(),$MRule.getTarget().getSimpleName()>{
+
+	public boolean check($MRule.getSource().getSimpleName() source){
+#if (!$MRule.checkTupleType())
+		return true;
+#else
+		//check that there are no sub rules that convert the element
+#foreach ( $rule in $MRule.getSubConvertors() )
+		if ((new $!{rule}()).check(source)){
+			return false;
+		}
+
+#end
+		//check the FTuple is a tuple of the $MRule.getCheckMethodName() relation 
+		return source.instanceOf( (($MRule.getTransformation().getInstanceGenenerator().getSimpleName())source.getInstance().getMetaModel()).$MRule.getCheckMethodName()() );
+#end
+	}
+
+	public $MRule.getTarget().getSimpleName() build($MRule.getSource().getSimpleName() source, Transformer t){
+		//create the result
+#if($MRule.loadMetaModel())
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		
+		//create the model result, where instances will be stored
+		Resource result = resourceSet.createResource(URI.createFileURI("./data/instance_model_of_$!{MRule.getTargetElementName()}_"+System.currentTimeMillis()+".xmi"));
+
+		return result;
+#elseif($MRule.createEClassInstance())
+		//get the central resourceset using the FInstance's resouce
+		ResourceSet central = (t.transform(  $!{MRule.getTransformation().getRootRule()}.class, source.getInstance() )).getResourceSet();
+		central.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		central.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new XMIResourceFactoryImpl());
+
+		//get the EClass EObject using getEObject
+		URI mmuri = URI.createURI("$MRule.getMMPath()" );
+		Resource metaModel = central.getResource(mmuri, true);
+		EClass metaClass = (EClass) metaModel.getEObject( "$MRule.getUriFragment()" );
+
+		//get the Efactory of the EPackage of the EObject
+		EFactory factory = metaClass.getEPackage().getEFactoryInstance();
+
+		//create the result
+		EObject result = factory.create(metaClass);
+
+		return result;
+#elseif($MRule.createString())
+		//create an Object (String) based on the given FTuple
+		return source.toString();
+#elseif($MRule.createInteger())
+		//create an Object (Integer) based on the given FTuple
+		return new Integer(source.toInteger());
+#else
+		return null;
+#end
+	}
+
+	public void setProperties($MRule.getTarget().getSimpleName() target, $MRule.getSource().getSimpleName() source, Transformer t){
+#if($MRule.loadMetaModel())
+#foreach ( $rule in $MRule.getAllRules() )
+#if($rule.createEClassInstance())
+
+		List<$rule.getTarget().getCanonicalName()> $rule.getName()_conv = t.transformAll($!{rule.getName()}.class,source.getTuples("$rule.getCheckMethodName()"));
+		for ($rule.getTarget().getCanonicalName() data:$rule.getName()_conv)
+			if(data != null)
+				target.getContents().add(data);
+
+#end
+#end
+
+		//write model out 
+		try {
+			target.save(null);
+		}
+		catch (java.io.IOException e){
+			System.err.println("could not write generated file to directory");
+			e.printStackTrace();
+			System.exit(-1);
+		}
+#end
+#if($MRule.createEClassInstance())
+#foreach ( $setProperty in $MRule.getSetProperties() )
+#set( $varNo = "#inc" )
+#if (! $setProperty.convertsBoolean()) 
+		EClass objectClass$varNo = target.eClass();
+		EStructuralFeature feature$varNo = objectClass$!{varNo}.getEStructuralFeature("$setProperty.getEStructuralFeature().getName()");
+		##Class dataConvertorRule$varNo = $!{setProperty.getConvertor().getName()}.class;
+		
+		List<FTuple> linkFTuples$varNo = source.getInstance().getTuples("$setProperty.getBinaryRelationMethod()");
+		List<FTuple> dataFTuples$varNo = source.getInstance().getTuples("$setProperty.getDataRelationMethod()"); 
+##//go through the link Ftuples
+		for(FTuple link$varNo: linkFTuples$varNo){
+##//if the "from" part of any link FTuple matches the current FTuple
+			if( link$!{varNo}.getAtom(0) == source.getAtom(0)){
+##//the "to" part of the link ftuple should be converted and eSet in the target EObject 
+				Object dataSrc$varNo = link$!{varNo}.getAtom(1);
+##//get the FTuple of the data object
+				FTuple dataFTuple$varNo = null;
+				for(FTuple data$varNo: dataFTuples$varNo){
+					if(dataSrc$varNo == data$!{varNo}.getAtom(0)){
+						dataFTuple$varNo = data$varNo;
+					}				
+				}
+##//convert the data
+				Object dataDst$varNo =null;
+				if(dataFTuple$varNo != null){
+##dataDst$varNo = (Object) t.transform(dataConvertorRule$varNo, dataFTuple$varNo );
+					dataDst$varNo = (Object) t.transform( dataFTuple$varNo );
+				}
+				if(dataDst$varNo != null){
+				try {
+					if (feature$!{varNo}.isMany()){
+						((EList<EObject>)target.eGet(feature$varNo)).add((EObject)dataDst$varNo);
+					}
+					else
+						target.eSet(feature$varNo, dataDst$varNo);		
+				} catch (Throwable tr) {
+					tr.printStackTrace();
+				}	
+				}
+			}
+		}
+#elseif($setProperty.convertsBoolean()) 
+
+//convert the boolean value for $setProperty.getEStructuralFeature().getName()
+		EClass objectClass$varNo = target.eClass();
+		EStructuralFeature feature$varNo = objectClass$!{varNo}.getEStructuralFeature("$setProperty.getEStructuralFeature().getName()");
+
+		List<FTuple> linkFTuples$varNo = source.getInstance().getTuples("$setProperty.getBinaryRelationMethod()");
+		List<FTuple> dataFTuples$varNo = source.getInstance().getTuples("$setProperty.getDataRelationMethod()");
+		List<FTuple> data2FTuples$varNo = source.getInstance().getTuples("$setProperty.getSecondDataRelationMethod()");
+
+##//go through the link Ftuples
+		for(FTuple link$varNo: linkFTuples$varNo){
+##//if the "from" part of any link FTuple matches the current FTuple
+			if( link$!{varNo}.getAtom(0) == source.getAtom(0)){
+##//the "to" part of the link ftuple should be converted and eSet in the target EObject 
+				Object dataSrc$varNo = link$!{varNo}.getAtom(1);
+##//get the FTuple of the data 
+				FTuple dataFTuple$varNo = null;
+				for(FTuple data$varNo: dataFTuples$varNo){
+					if(dataSrc$varNo == data$!{varNo}.getAtom(0)){
+						target.eSet(feature$varNo, new Boolean(true));
+					}				
+				}
+
+				for(FTuple data$varNo: data2FTuples$varNo){
+					if(dataSrc$varNo == data$!{varNo}.getAtom(0)){
+						target.eSet(feature$varNo, new Boolean(false));
+					}				
+				}
+
+			}
+		}
+
+#end
+
+#end
+#end
+	}
+
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mcn="http://models.cs.ox.ac.uk/ns/modelcatalogue">
+  <mcn:Relationship source="/44" target="/3" type="30"/>
+  <mcn:Relationship source="/44" target="/45" type="30"/>
+  <mcn:Tag/>
+  <mcn:DataClass label="_String0" GUID="_String6" createdByUser="31" contains="/3"/>
+  <mcn:PrimitiveType label="_String0" GUID="_String8" createdByUser="31"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String1" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String1" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String2" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String5" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String3" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String4" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4">
+    <tags href="./data/instance_model_of_mcn_1439827669523.xmi#/2"/>
+  </mcn:EnumValue>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String6" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String8" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String7" createdByUser="31" type="/4"/>
+  <mcn:EnumValue label="_String0" GUID="_String9" createdByUser="31" type="/4"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String9" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31">
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/31"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/30"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/25"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/32"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/34"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/35"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/29"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/33"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/23"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/22"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/17"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/24"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/27"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/26"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/21"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/28"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/13"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/16"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/15"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/10"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/18"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/19"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/20"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/14"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/5"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/8"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/7"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/9"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/12"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/11"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/6"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/51"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/54"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/53"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/56"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/55"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/57"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/45"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/44"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/47"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/46"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/50"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/48"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/52"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/49"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/37"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/36"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/39"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/38"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/41"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/40"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/43"/>
+    <OrderedValues href="./data/instance_model_of_mcn_1439827669523.xmi#/42"/>
+  </mcn:Enumeration>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31"/>
+  <mcn:Enumeration label="_String0" GUID="_String8" createdByUser="31"/>
+</xmi:XMI>
