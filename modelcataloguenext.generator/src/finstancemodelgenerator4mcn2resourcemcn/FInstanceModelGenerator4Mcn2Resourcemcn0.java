@@ -32,7 +32,7 @@ public class FInstanceModelGenerator4Mcn2Resourcemcn0 implements Rule<FInstance,
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		
 		//create the model result, where instances will be stored
-		Resource result = resourceSet.createResource(URI.createFileURI("./data/instance_model_of_mcn_"+System.currentTimeMillis()+".xmi"));
+		Resource result = resourceSet.createResource(URI.createFileURI("instance_model_of_mcn_"+System.currentTimeMillis()+".xmi"));
 
 		return result;
 	}
