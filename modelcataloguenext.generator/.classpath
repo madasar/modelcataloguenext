@@ -11,8 +11,6 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
-	<classpathentry kind="lib" path="lib/velocity-1.7-beta1-dep.jar"/>
-	<classpathentry kind="lib" path="lib/velocity-1.7-beta1.jar"/>
 	<classpathentry kind="lib" path="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/lib/tools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
