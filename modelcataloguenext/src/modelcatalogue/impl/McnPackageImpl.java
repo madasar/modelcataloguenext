@@ -705,13 +705,13 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * @generated
 	 */
 	protected void createImportAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Import";	
+		String source = "http://www.eclipse.org/OCL/Import";		
 		addAnnotation
 		  (this, 
 		   source, 
 		   new String[] {
 			 "ecore", "http://www.eclipse.org/emf/2002/Ecore"
-		   });
+		   });			
 	}
 
 	/**
@@ -721,7 +721,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -729,13 +729,13 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });	
+		   });		
 		addAnnotation
 		  (dataClassEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NonSelf_contains NonSelf_extends"
-		   });
+		   });	
 	}
 
 	/**
@@ -745,7 +745,7 @@ public class McnPackageImpl extends EPackageImpl implements McnPackage {
 	 * @generated
 	 */
 	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";					
 		addAnnotation
 		  (dataClassEClass, 
 		   source, 

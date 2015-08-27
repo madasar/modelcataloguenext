@@ -7,33 +7,6 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated modelcataloguenext -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="mcn.presentation.McnModelWizardID"
-            name="%_UI_McnModelWizard_label"
-            class="mcn.presentation.McnModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/McnModelFile.gif">
-         <description>%_UI_McnModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated modelcataloguenext -->
-      <editor
-            id="mcn.presentation.McnEditorID"
-            name="%_UI_McnEditor_label"
-            icon="icons/full/obj16/McnModelFile.gif"
-            extensions="mcn"
-            class="mcn.presentation.McnEditor"
-            contributorClass="mcn.presentation.McnActionBarContributor">
-      </editor>
-   </extension>
-   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated mcn -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -60,4 +33,5 @@
             contributorClass="modelcatalogue.presentation.McnActionBarContributor">
       </editor>
    </extension>
+
 </plugin>
